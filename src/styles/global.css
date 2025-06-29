@@ -1,0 +1,146 @@
+/* text */
+.text-sm {
+    font-size: 12px;
+}
+
+.text-md {
+    font-size: 14px;
+}
+
+.text-lg {
+    font-size: 16px;
+}
+
+.text-grey {
+    color: #363636;
+}
+
+.text-white {
+    color: white;
+}
+
+
+.text-semi-bold {
+    font-weight: 600;
+}
+
+.div-flex-row,
+.div-flex-column,
+.div-flex-end,
+.div-flex-center,
+.div-space-between {
+    display: flex;
+}
+
+/* flex */
+
+.div-flex-row {
+    flex-direction: row;
+}
+
+.div-flex-column {
+    flex-direction: column;
+
+}
+
+.div-flex-end {
+    justify-content: flex-end;
+}
+
+.div-flex-center {
+    justify-content: center;
+    width: 100%;
+}
+
+.div-space-between {
+    justify-content: space-between;
+}
+
+
+.div-align-center {
+    align-items: center;
+}
+
+
+.rg-5 {
+    row-gap: 5px;
+}
+
+.rg-10 {
+    row-gap: 10px;
+}
+
+.rg-15 {
+    row-gap: 15px;
+}
+
+.rg-20 {
+    row-gap: 20px;
+}
+
+.rg-25 {
+    row-gap: 25px;
+}
+
+.cg-5 {
+    column-gap: 5px;
+}
+
+.cg-10 {
+    column-gap: 10px;
+}
+
+.cg-15 {
+    column-gap: 15px;
+}
+
+.cg-20 {
+    column-gap: 20px;
+}
+
+.cg-25 {
+    column-gap: 25px;
+}
+
+/* icon size */
+
+.icon-size-12 {
+    height: 12px;
+    width: 12px;
+}
+
+.icon-size-14 {
+    height: 14px;
+    width: 14px;
+}
+
+.icon-size-16 {
+    height: 16px;
+    width: 16px;
+}
+
+.icon-size-18 {
+    height: 18px;
+    width: 18px;
+}
+
+.icon-size-20 {
+    height: 20px;
+    width: 20px;
+}
+
+.icon-size-24 {
+    width: 24px;
+    height: 24px;
+}
+
+.temp-container {
+    height: 100px;
+    border: 1px solid;
+}
+
+.inner-div {
+    height: 50px;
+    width: 50px;
+    border: 1px solid green
+}

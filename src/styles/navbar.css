@@ -1,14 +1,3 @@
-.vscode-icon {
-    color: #007ACC;
-    font-size: 24px;
-}
-
-.vscode-icon:hover {
-    color: #005999;
-    cursor: pointer;
-}
-
-
 .navbar-container-padding {
     height: 30px;
     padding: 3px 6px 3px 6px;

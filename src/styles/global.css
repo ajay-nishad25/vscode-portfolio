@@ -1,3 +1,16 @@
+.page-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.sub-page-layout {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
 /* text */
 .text-sm {
     font-size: 12px;
@@ -59,6 +72,12 @@
 
 .div-align-center {
     align-items: center;
+}
+
+.div-col-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 
@@ -134,6 +153,11 @@
     height: 24px;
 }
 
+.icon-size-27 {
+    width: 27px;
+    height: 27px;
+}
+
 .temp-container {
     height: 100px;
     border: 1px solid;
@@ -143,4 +167,12 @@
     height: 50px;
     width: 50px;
     border: 1px solid green
+}
+
+.grey-border-bottom {
+    border-bottom: 1px solid rgba(89, 89, 89, 0.73);
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

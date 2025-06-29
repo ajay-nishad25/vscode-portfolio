@@ -11,9 +11,9 @@ import { MdOutlineClose } from "react-icons/md";
 
 function Navbar() {
   return (
-    <div className="div-flex-column navbar-theme-black">
+    <div className="div-flex-column navbar-theme-black grey-border-bottom">
       <div className="navbar-container-padding">
-        <Row>
+        <Row className="g-0 m-0 p-0">
           <Col xl={4} lg={4} md={4} sm={4}>
             <div className="div-flex-row  div-align-center cg-20 text-white">
               <VscVscode className="vscode-icon icon-size-20" />

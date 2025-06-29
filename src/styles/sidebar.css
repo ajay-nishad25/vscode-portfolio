@@ -1,0 +1,20 @@
+.sidebar-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 45px;
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.push-to-bottom {
+    margin-top: auto;
+}
+
+.sidebar-active {
+    box-shadow: inset 2px 0 0 rgb(0, 110, 255);
+}
+
+.sidebar-icon-padding {
+    padding: 10px 0px 10px 0px;
+}

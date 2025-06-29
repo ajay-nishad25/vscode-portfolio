@@ -8,15 +8,16 @@
     cursor: pointer;
 }
 
+
 .navbar-container-padding {
-    padding: 3px 6px 3px 6px;
+    height: 30px;
+    padding: 3px 6px;
 }
 
 .vscode-search {
     width: 450px;
     border: 1px solid #cccccc80;
     border-radius: 6px;
-    /* background-color: rgba(207, 207, 207, 0.195); */
     background-color: #3e4347db;
 }
 

@@ -14,7 +14,6 @@ function Sidebar() {
   const [activeIcon, setActiveIcon] = useState("Files");
 
   const handleIconClick = (iconName) => {
-    console.log(`Clicked: ${iconName}`);
     setActiveIcon(iconName);
   };
 

@@ -18,19 +18,19 @@ function Navbar() {
         <Row className="g-0 m-0 p-0">
           <Col xl={4} lg={4} md={4} sm={6} xs={6}>
             <div className="div-flex-row  div-align-center cg-20 text-white ">
-              <div className="div-flex-row div-align-center py-1 cg-25">
+              <div className="div-flex-row div-align-center cg-25">
                 <VscVscode className="vscode-icon icon-size-20 " />
               </div>
               {!isMobile && (
-                <div className="div-flex-row  div-align-center cg-15">
-                  <span className="text-md">File</span>
-                  <span className="text-md">Edit</span>
-                  <span className="text-md">Selection</span>
-                  <span className="text-md">View</span>
-                  <span className="text-md">Go</span>
-                  <span className="text-md">Run</span>
-                  <span className="text-md">Terminal</span>
-                  <span className="text-md">Help</span>
+                <div className="div-flex-row cg-15">
+                  <span className="text-md text-grey">File</span>
+                  <span className="text-md text-grey">Edit</span>
+                  <span className="text-md text-grey">Selection</span>
+                  <span className="text-md text-grey">View</span>
+                  <span className="text-md text-grey">Go</span>
+                  <span className="text-md text-grey">Run</span>
+                  <span className="text-md text-grey">Terminal</span>
+                  <span className="text-md text-grey">Help</span>
                 </div>
               )}
             </div>
@@ -43,7 +43,7 @@ function Navbar() {
                 <div className="div-flex-row div-align-center vscode-search">
                   <div className="div-flex-center div-align-center cg-5 ">
                     <VscSearch className="icon-size-16" />
-                    <span className="text-sm"> vscode-portfolio</span>
+                    <span className="text-sm text-grey"> vscode-portfolio</span>
                   </div>
                 </div>
               </div>

@@ -8,7 +8,7 @@ function App() {
       <Navbar />
       <div className="div-flex-row sub-page-layout">
         <Sidebar />
-        <div className="main-content">Main content goes here</div>
+        <div className="main-content"></div>
       </div>
     </div>
   );

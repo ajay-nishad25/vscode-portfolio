@@ -11,12 +11,12 @@
 
 .navbar-container-padding {
     height: 30px;
-    padding: 3px 6px;
+    padding: 3px 6px 3px 6px;
 }
 
 .vscode-search {
     width: 450px;
-    border: 1px solid #cccccc80;
+    border: 1px solid rgba(204, 204, 204, 0.134);
     border-radius: 6px;
     background-color: #3e4347db;
 }

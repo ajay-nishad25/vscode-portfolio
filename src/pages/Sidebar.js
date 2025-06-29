@@ -28,7 +28,7 @@ function Sidebar() {
   };
 
   return (
-    <div className="sidebar-container-width sidebar-layout">
+    <div className="sidebar-container-width sidebar-layout grey-border-right">
       <div className="div-flex-column rg-10 cursor-pointer">
         <div
           className={getIconClass("Files")}

@@ -1,14 +1,16 @@
 import "./App.css";
 import Navbar from "pages/Navbar";
+import Sidebar from "pages/Sidebar";
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <Navbar />
+    <div className="page-layout">
+      <Navbar />
+      <div className="div-flex-row sub-page-layout">
+        <Sidebar />
+        <div className="main-content"></div>
       </div>
     </div>
   );
 }
-
 export default App;

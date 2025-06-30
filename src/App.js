@@ -1,16 +1,12 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import Navbar from "pages/Navbar";
-import Sidebar from "pages/Sidebar";
+import Routes from "Routes";
 
 function App() {
   return (
-    <div className="page-layout">
-      <Navbar />
-      <div className="div-flex-row sub-page-layout">
-        <Sidebar />
-        <div className="main-content"></div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }
 export default App;

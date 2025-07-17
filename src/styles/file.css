@@ -1,0 +1,70 @@
+.file-item {
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.file-item:hover {
+    background-color: #2a2d2e;
+    color: #fff;
+}
+
+
+.file-item:hover svg {
+    filter: brightness(1.2);
+}
+
+.file-item:hover .text-sm {
+    color: #ffffff;
+}
+
+
+.open-arrow-downward {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.open-arrow-upward {
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+}
+
+
+/* Editor */
+
+.tab-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px;
+    border-right: 1px solid #444;
+    cursor: pointer;
+}
+
+.tab-item.active-tab {
+    background-color: #2d2d2d;
+    box-shadow: inset 0 3px 0 rgb(0, 110, 255);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.tab-content-area {
+    background: #1e1e1e;
+    height: calc(100vh - 60px);
+}
+
+.tab-main-content-bg {
+    background-color: #2d2d2d
+}
+
+.file-tab-section-header {
+    height: 30px;
+    background-color: #1E1E1E;
+}

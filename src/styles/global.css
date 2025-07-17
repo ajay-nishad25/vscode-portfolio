@@ -12,6 +12,7 @@
 }
 
 /* text */
+
 .text-sm {
     font-size: 12px;
 }
@@ -32,10 +33,15 @@
     color: white;
 }
 
-
 .text-semi-bold {
     font-weight: 600;
 }
+
+.text-weight-light {
+    font-weight: 400;
+}
+
+
 
 .div-flex-row,
 .div-flex-column,
@@ -173,6 +179,10 @@
     border-bottom: 1px solid rgba(89, 89, 89, 0.73);
 }
 
+.grey-border-top {
+    border-top: 1px solid rgba(89, 89, 89, 0.73);
+}
+
 .grey-border-right {
     border-right: 1px solid rgba(89, 89, 89, 0.73);
 }
@@ -181,7 +191,64 @@
     cursor: pointer;
 }
 
+/* Padding */
+
+.vp-5 {
+    padding: 5px 0px 5px 0px;
+}
+
+.vp-10 {
+    padding: 10px 0px 10px 0px;
+}
+
+.vp-15 {
+    padding: 15px 0px 15px 0px;
+}
+
+.vp-20 {
+    padding: 20px 0px 20px 0px;
+}
+
+.hp-5 {
+    padding: 0px 5px 0px 5px;
+}
+
+.hp-10 {
+    padding: 0px 10px 0px 10px;
+}
+
+.hp-15 {
+    padding: 0px 15px 0px 15px;
+}
+
+.hp-20 {
+    padding: 0px 20px 0px 20px;
+}
+
+.hp-60 {
+    padding: 0px 60px 0px 60px;
+}
+
 .main-content {
     width: 100%;
     background-color: #333333;
+    height: 100%;
+}
+
+.explore-section-height {
+    height: 100vh;
+}
+
+.explorer-bg {
+    background-color: #1E1E1E;
+}
+
+.button-css-none {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
 }

@@ -13,7 +13,7 @@ import About from "components/EditorTabs/About";
 import Github from "components/EditorTabs/Github";
 import Contact from "components/EditorTabs/Contact";
 
-function File() {
+export default function File() {
   const [hideFolder, setHideFolder] = useState(true);
   const [openTabs, setOpenTabs] = useState(["index.js"]);
   const [activeTab, setActiveTab] = useState("index.js");
@@ -177,5 +177,3 @@ function File() {
     </div>
   );
 }
-
-export default File;

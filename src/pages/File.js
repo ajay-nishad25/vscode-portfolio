@@ -138,11 +138,11 @@ export default function File() {
 
         <Col xl={10} lg={10} md={10} sm={10} xs={10}>
           <div className="div-flex-column">
-            <div className="div-flex-row file-tab-section-header div-align-center">
+            <div className="div-flex-row file-tab-section-header div-align-center grey-border-bottom">
               {openTabs.map((file) => (
                 <div
                   key={file}
-                  className={`tab-item  ${
+                  className={`tab-item ${
                     file === activeTab ? "active-tab" : " "
                   }`}
                   onClick={() => setActiveTab(file)}

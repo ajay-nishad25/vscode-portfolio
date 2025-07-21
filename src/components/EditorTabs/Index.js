@@ -1,6 +1,5 @@
 import React from "react";
-import CodeMirror from "@uiw/react-codemirror";
-import { javascript } from "@codemirror/lang-javascript";
+import CodeEditor from "utils/CodeEditor"; // Updated import
 
 const myInfo = `/* 
   Hey there! 👋
@@ -22,16 +21,7 @@ export default aboutMe;
 export default function Index() {
   return (
     <div className="hp-5">
-      <CodeMirror
-        value={myInfo}
-        height="100vh"
-        theme="dark"
-        extensions={[javascript()]}
-        readOnly={true}
-        basicSetup={{
-          lineNumbers: true,
-        }}
-      />
+      <CodeEditor value={myInfo} lang="js" />
     </div>
   );
 }

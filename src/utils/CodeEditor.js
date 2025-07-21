@@ -1,23 +1,24 @@
 import React from "react";
 import CodeMirror from "@uiw/react-codemirror";
+import { vscodeDark } from "@uiw/codemirror-theme-vscode";
 import { javascript } from "@codemirror/lang-javascript";
+import "styles/codeEditor.css";
 
-export default function CodeEditor({ value, height = "95vh", lang }) {
-  // Choose language extension based on `lang` prop; expand as needed
+export default function CodeEditor({ value, height = "95vh", lang = "js" }) {
   let extensions = [];
   if (lang === "js") extensions = [javascript()];
-  // Add other languages if needed (e.g. css(), html(), etc.)
 
   return (
     <CodeMirror
       value={value}
       height={height}
-      theme="dark"
+      theme={vscodeDark}
       extensions={extensions}
       readOnly={false}
       basicSetup={{
         lineNumbers: true,
       }}
+      style={{ fontSize: "12px", border: "none" }}
     />
   );
 }

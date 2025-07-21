@@ -20,7 +20,7 @@ export default aboutMe;
 
 export default function Index() {
   return (
-    <div className="hp-5">
+    <div>
       <CodeEditor value={myInfo} lang="js" />
     </div>
   );

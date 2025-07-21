@@ -1,0 +1,44 @@
+/* Handle editor outline  */
+.cm-editor.cm-focused {
+    outline: none !important;
+}
+
+
+/* Background color  */
+.cm-theme,
+.cm-editor,
+.cm-gutters {
+    background-color: #2d2d2d !important;
+}
+
+/* Custom scrollbar */
+.cm-scroller {
+    scrollbar-width: thin;
+    scrollbar-color: #454545 #232323;
+}
+
+.cm-scroller::-webkit-scrollbar {
+    width: 8px;
+    background: #232323;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb {
+    background: #454545;
+    border-radius: 8px;
+    border: 2px solid #232323;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb:hover {
+    background: #5b5b5b;
+}
+
+.cm-scroller::-webkit-scrollbar-corner {
+    background: #232323;
+}
+
+
+/* Make closing JSX/HTML tag names match VS Code's blue */
+span.cm-tag.cm-tagName.cm-tagName-close {
+    color: #569CD6 !important;
+    /* Adjust this hex to match your desired color */
+}

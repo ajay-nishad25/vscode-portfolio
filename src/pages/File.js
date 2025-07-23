@@ -9,50 +9,50 @@ import { BiSolidInfoCircle } from "react-icons/bi";
 import { FaHtml5 } from "react-icons/fa";
 
 import Index from "components/EditorTabs/Index";
-import About from "components/EditorTabs/About";
+import AboutTech from "components/EditorTabs/AboutTech";
 import Github from "components/EditorTabs/Github";
 import Contact from "components/EditorTabs/Contact";
 
 export default function File() {
   const [hideFolder, setHideFolder] = useState(true);
-  const [openTabs, setOpenTabs] = useState(["index.js"]);
-  const [activeTab, setActiveTab] = useState("index.js");
+  const [openTabs, setOpenTabs] = useState(["Index.js"]);
+  const [activeTab, setActiveTab] = useState("Index.js");
 
   const editorTabView = [
     {
-      title: "index.js",
+      title: "Index.js",
       icon: <DiJsBadge className="icon-size-12" color="yellow" />,
       detailSection: <Index />,
     },
     {
-      title: "about.css",
+      title: "AboutTech.css",
       icon: <IoLogoCss3 className="icon-size-14" color="#663399" />,
-      detailSection: <About />,
+      detailSection: <AboutTech />,
     },
     {
-      title: "github.md",
+      title: "Github.md",
       icon: <BiSolidInfoCircle className="icon-size-14" color="#0096FF" />,
       detailSection: <Github />,
     },
     {
-      title: "contact.html",
+      title: "Contact.html",
       icon: <FaHtml5 className="icon-size-14" color="#E44D26" />,
       detailSection: <Contact />,
     },
   ];
 
   const fileComponents = {
-    "index.js": <Index />,
-    "about.css": <About />,
-    "github.md": <Github />,
-    "contact.html": <Contact />,
+    "Index.js": <Index />,
+    "AboutTech.css": <AboutTech />,
+    "Github.md": <Github />,
+    "Contact.html": <Contact />,
   };
 
   const fileIcons = {
-    "index.js": <DiJsBadge className="icon-size-12" color="yellow" />,
-    "about.css": <IoLogoCss3 className="icon-size-14" color="#663399" />,
-    "github.md": <BiSolidInfoCircle className="icon-size-14" color="#0096FF" />,
-    "contact.html": <FaHtml5 className="icon-size-14" color="#E44D26" />,
+    "Index.js": <DiJsBadge className="icon-size-12" color="yellow" />,
+    "AboutTech.css": <IoLogoCss3 className="icon-size-14" color="#663399" />,
+    "Github.md": <BiSolidInfoCircle className="icon-size-14" color="#0096FF" />,
+    "Contact.html": <FaHtml5 className="icon-size-14" color="#E44D26" />,
   };
 
   const handleFileClick = (fileName) => {

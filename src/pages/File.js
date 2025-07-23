@@ -30,12 +30,12 @@ export default function File() {
       detailSection: <AboutTech />,
     },
     {
-      title: "github.md",
+      title: "Github.md",
       icon: <BiSolidInfoCircle className="icon-size-14" color="#0096FF" />,
       detailSection: <Github />,
     },
     {
-      title: "contact.html",
+      title: "Contact.html",
       icon: <FaHtml5 className="icon-size-14" color="#E44D26" />,
       detailSection: <Contact />,
     },
@@ -44,15 +44,15 @@ export default function File() {
   const fileComponents = {
     "Index.js": <Index />,
     "AboutTech.css": <AboutTech />,
-    "github.md": <Github />,
-    "contact.html": <Contact />,
+    "Github.md": <Github />,
+    "Contact.html": <Contact />,
   };
 
   const fileIcons = {
     "Index.js": <DiJsBadge className="icon-size-12" color="yellow" />,
     "AboutTech.css": <IoLogoCss3 className="icon-size-14" color="#663399" />,
-    "github.md": <BiSolidInfoCircle className="icon-size-14" color="#0096FF" />,
-    "contact.html": <FaHtml5 className="icon-size-14" color="#E44D26" />,
+    "Github.md": <BiSolidInfoCircle className="icon-size-14" color="#0096FF" />,
+    "Contact.html": <FaHtml5 className="icon-size-14" color="#E44D26" />,
   };
 
   const handleFileClick = (fileName) => {

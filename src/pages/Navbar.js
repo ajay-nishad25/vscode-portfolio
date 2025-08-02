@@ -43,7 +43,7 @@ function Navbar() {
                 <div className="div-flex-row div-align-center vscode-search cursor-pointer">
                   <div className="div-flex-center div-align-center cg-5 ">
                     <VscSearch className="icon-size-16" color="grey" />
-                    <span className="text-sm text-grey"> vscode-portfolio</span>
+                    <span className="text-sm text-grey"> portfolio</span>
                   </div>
                 </div>
               </div>

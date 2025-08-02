@@ -132,9 +132,7 @@ export default function File() {
                   <span>
                     <VscChevronDown className="icon-size-18" />
                   </span>
-                  <span className="text-sm text-semi-bold">
-                    ajay-nishad25-portfolio
-                  </span>
+                  <span className="text-sm text-semi-bold">portfolio</span>
                 </div>
                 <div className="div-flex-column">
                   <button
@@ -153,9 +151,7 @@ export default function File() {
                     <span>
                       <PiFolderSimpleFill className="icon-size-18" />
                     </span>
-                    <span className="text-sm text-weight-light">
-                      ajay-nishad25-portfolio
-                    </span>
+                    <span className="text-sm text-weight-light">portfolio</span>
                   </button>
                   {hideFolder && (
                     <div className="div-flex-column">

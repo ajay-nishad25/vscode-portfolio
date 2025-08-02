@@ -69,6 +69,17 @@
     background-color: #1E1E1E;
 }
 
+.file-tab-section-scroll {
+    overflow-x: auto;
+    overflow-y: visible;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.file-tab-section-scroll::-webkit-scrollbar {
+    display: none;
+}
+
 /* Delete this code i am using this just to make the temp text to align in dispaly center */
 .temp-message-container {
     height: calc(100vh - 60px);

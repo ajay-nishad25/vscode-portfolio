@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "styles/file.css";
 import { Col, Row } from "react-bootstrap";
 import { VscEllipsis, VscChevronDown } from "react-icons/vsc";
@@ -12,11 +12,22 @@ import Index from "components/EditorTabs/Index";
 import AboutTech from "components/EditorTabs/AboutTech";
 import Github from "components/EditorTabs/Github";
 import Contact from "components/EditorTabs/Contact";
+import useMediaQuery from "utils/useMediaQuery";
+
+const defaultTabs = ["Index.js", "AboutTech.css", "Github.md", "Contact.html"];
 
 export default function File() {
+  const isMobile = useMediaQuery("(max-width: 574px)");
   const [hideFolder, setHideFolder] = useState(true);
   const [openTabs, setOpenTabs] = useState(["Index.js"]);
   const [activeTab, setActiveTab] = useState("Index.js");
+
+  useEffect(() => {
+    if (isMobile) {
+      setOpenTabs(defaultTabs);
+      setActiveTab((cur) => (defaultTabs.includes(cur) ? cur : "Index.js"));
+    }
+  }, [isMobile]);
 
   const editorTabView = [
     {
@@ -73,72 +84,76 @@ export default function File() {
 
   return (
     <div className="div-flex-column">
-      <Row className="explore-section-height g-0 p-0">
-        <Col
-          xl={2}
-          lg={2}
-          md={2}
-          sm={2}
-          xs={2}
-          className="explorer-bg grey-border-right"
-        >
-          <div className="div-flex-column hp-10">
-            <div className="div-space-between vp-5">
-              <span className="text-sm">EXPLORER</span>
-              <VscEllipsis className="icon-size-20" />
-            </div>
-            <div className="div-flex-column vp-5 ">
-              <div className="div-flex-row div-align-center cursor-pointer">
-                <span>
-                  <VscChevronDown className="icon-size-18" />
-                </span>
-                <span className="text-sm text-semi-bold">
-                  ajay-nishad25-portfolio
-                </span>
+      <Row className="explore-section-height p-0 m-0 gx-0 ">
+        {!isMobile && (
+          <Col
+            xl={2}
+            lg={3}
+            md={4}
+            sm={5}
+            xs={2}
+            className="explorer-bg grey-border-right"
+          >
+            <div className="div-flex-column hp-10">
+              <div className="div-space-between vp-5">
+                <span className="text-sm">EXPLORER</span>
+                <VscEllipsis className="icon-size-20" />
               </div>
-              <div className="div-flex-column">
-                <button
-                  className="button-css-none div-flex-row div-align-center cg-5 cursor-pointer hp-15 file-item"
-                  onClick={() => setHideFolder(!hideFolder)}
-                >
+              <div className="div-flex-column vp-5 ">
+                <div className="div-flex-row div-align-center cursor-pointer">
                   <span>
-                    <VscChevronDown
-                      className={`icon-size-18 ${
-                        hideFolder ? "open-arrow-downward" : "open-arrow-upward"
-                      }`}
-                    />
+                    <VscChevronDown className="icon-size-18" />
                   </span>
-                  <span>
-                    <PiFolderSimpleFill className="icon-size-18" />
-                  </span>
-                  <span className="text-sm text-weight-light">
+                  <span className="text-sm text-semi-bold">
                     ajay-nishad25-portfolio
                   </span>
-                </button>
-                {hideFolder && (
-                  <div className="div-flex-column">
-                    {editorTabView.map((file) => (
-                      <div
-                        key={file.title}
-                        className="div-flex-row div-align-center cg-5 cursor-pointer hp-60 file-item"
-                        onClick={() => handleFileClick(file.title)}
-                      >
-                        <span>{file.icon}</span>
-                        <span className="text-sm text-weight-light">
-                          {file.title}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
+                </div>
+                <div className="div-flex-column">
+                  <button
+                    className="button-css-none div-flex-row div-align-center cg-5 cursor-pointer hp-15 file-item"
+                    onClick={() => setHideFolder(!hideFolder)}
+                  >
+                    <span>
+                      <VscChevronDown
+                        className={`icon-size-18 ${
+                          hideFolder
+                            ? "open-arrow-downward"
+                            : "open-arrow-upward"
+                        }`}
+                      />
+                    </span>
+                    <span>
+                      <PiFolderSimpleFill className="icon-size-18" />
+                    </span>
+                    <span className="text-sm text-weight-light">
+                      ajay-nishad25-portfolio
+                    </span>
+                  </button>
+                  {hideFolder && (
+                    <div className="div-flex-column">
+                      {editorTabView.map((file) => (
+                        <div
+                          key={file.title}
+                          className="div-flex-row div-align-center cg-5 cursor-pointer hp-60 file-item"
+                          onClick={() => handleFileClick(file.title)}
+                        >
+                          <span>{file.icon}</span>
+                          <span className="text-sm text-weight-light">
+                            {file.title}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        </Col>
+          </Col>
+        )}
 
-        <Col xl={10} lg={10} md={10} sm={10} xs={10}>
+        <Col xl={10} lg={9} md={8} sm={7} xs={12}>
           <div className="div-flex-column">
-            <div className="div-flex-row file-tab-section-header div-align-center grey-border-bottom">
+            <div className="div-flex-row file-tab-section-header file-tab-section-scroll div-align-center grey-border-bottom">
               {openTabs.map((file) => (
                 <div
                   key={file}
@@ -149,15 +164,17 @@ export default function File() {
                 >
                   {fileIcons[file]}
                   <span className="text-sm">{file}</span>
-                  <button
-                    className="close-btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleCloseTab(file);
-                    }}
-                  >
-                    ×
-                  </button>
+                  {!isMobile && (
+                    <button
+                      className="close-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleCloseTab(file);
+                      }}
+                    >
+                      ×
+                    </button>
+                  )}
                 </div>
               ))}
             </div>

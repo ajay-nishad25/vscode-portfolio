@@ -19,8 +19,36 @@ const defaultTabs = ["Index.js", "AboutTech.css", "Github.md", "Contact.html"];
 export default function File() {
   const isMobile = useMediaQuery("(max-width: 574px)");
   const [hideFolder, setHideFolder] = useState(true);
-  const [openTabs, setOpenTabs] = useState(["Index.js"]);
-  const [activeTab, setActiveTab] = useState("Index.js");
+
+  // Initialize openTabs from sessionStorage or fallback to ["Index.js"]
+  const [openTabs, setOpenTabs] = useState(() => {
+    try {
+      const storedTabs = sessionStorage.getItem("openTabs");
+      return storedTabs ? JSON.parse(storedTabs) : ["Index.js"];
+    } catch {
+      return ["Index.js"];
+    }
+  });
+
+  // Initialize activeTab similarly, fallback to "Index.js"
+  const [activeTab, setActiveTab] = useState(() => {
+    try {
+      const storedActive = sessionStorage.getItem("activeTab");
+      return storedActive || "Index.js";
+    } catch {
+      return "Index.js";
+    }
+  });
+
+  // Sync sessionStorage whenever openTabs changes
+  useEffect(() => {
+    sessionStorage.setItem("openTabs", JSON.stringify(openTabs));
+  }, [openTabs]);
+
+  // Sync sessionStorage whenever activeTab changes
+  useEffect(() => {
+    sessionStorage.setItem("activeTab", activeTab);
+  }, [activeTab]);
 
   useEffect(() => {
     if (isMobile) {

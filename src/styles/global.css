@@ -234,7 +234,7 @@
 }
 
 .main-content {
-    width: 100%;
+    width: calc(100vw - 45px);
     background-color: #333333;
     height: 100%;
 }

@@ -61,10 +61,10 @@ function Sidebar() {
       <div className="push-to-bottom">
         <div className="div-flex-column rg-10">
           <div className="div-flex-center sidebar-icon-padding">
-            <VscAccount className="icon-size-24" />
+            <VscAccount className="icon-size-24" color="grey" />
           </div>
           <div className="div-flex-center sidebar-icon-padding">
-            <VscSettingsGear className="icon-size-24" />
+            <VscSettingsGear className="icon-size-24" color="grey" />
           </div>
         </div>
       </div>

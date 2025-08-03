@@ -7,6 +7,10 @@ import { DiJsBadge } from "react-icons/di";
 import { IoLogoCss3 } from "react-icons/io";
 import { BiSolidInfoCircle } from "react-icons/bi";
 import { FaHtml5 } from "react-icons/fa";
+import { VscNewFile } from "react-icons/vsc";
+import { VscNewFolder } from "react-icons/vsc";
+import { VscRefresh } from "react-icons/vsc";
+import { VscCollapseAll } from "react-icons/vsc";
 
 import Index from "components/EditorTabs/Index";
 import AboutTech from "components/EditorTabs/AboutTech";
@@ -128,11 +132,19 @@ export default function File() {
                 <VscEllipsis className="icon-size-20" />
               </div>
               <div className="div-flex-column vp-5 ">
-                <div className="div-flex-row div-align-center cursor-pointer">
-                  <span>
-                    <VscChevronDown className="icon-size-18" />
-                  </span>
-                  <span className="text-sm text-semi-bold">portfolio</span>
+                <div className="div-flex-row  div-space-between div-align-center cursor-pointer">
+                  <div className="div-flex-row div-align-center">
+                    <span>
+                      <VscChevronDown className="icon-size-18" />
+                    </span>
+                    <span className="text-sm text-semi-bold">portfolio</span>
+                  </div>
+                  <div className="div-flex-row cg-5">
+                    <VscNewFile className="icon-size-14" color="white" />
+                    <VscNewFolder className="icon-size-14" color="white" />
+                    <VscRefresh className="icon-size-14" color="white" />
+                    <VscCollapseAll className="icon-size-14" color="white" />
+                  </div>
                 </div>
                 <div className="div-flex-column">
                   <button

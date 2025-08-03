@@ -161,7 +161,7 @@ export default function File() {
                       />
                     </span>
                     <span>
-                      <PiFolderSimpleFill className="icon-size-18" />
+                      <PiFolderSimpleFill className="icon-size-16" />
                     </span>
                     <span className="text-sm text-weight-light">portfolio</span>
                   </button>

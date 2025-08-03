@@ -29,7 +29,7 @@ const myGithubInfo = `# Ajay Nishad
 
 export default function Github() {
   return (
-    <div className="hp-5">
+    <div>
       <CodeEditor value={myGithubInfo} lang="md" />
     </div>
   );

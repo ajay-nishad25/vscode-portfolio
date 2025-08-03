@@ -24,8 +24,7 @@ const contactHtml = `<!DOCTYPE html>
 
 export default function Contact() {
   return (
-    <div className="hp-5">
-      <span className="text-sm">Contact.html</span>
+    <div>
       <CodeEditor value={contactHtml} lang="html" />
     </div>
   );

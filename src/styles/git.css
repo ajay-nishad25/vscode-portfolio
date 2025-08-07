@@ -1,0 +1,12 @@
+.grey-placeholder::placeholder {
+    color: grey;
+}
+
+.commit-button-container {
+    height: 25px;
+    border-radius: 2px;
+    border: 1px solid rgba(204, 204, 204, 0.134);
+    background-color: #3e4347db;
+    display: flex;
+    align-items: center;
+}

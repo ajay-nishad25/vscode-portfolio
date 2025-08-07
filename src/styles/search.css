@@ -32,3 +32,45 @@
     line-height: 25px;
     opacity: 1;
 }
+
+.site-icon-background {
+    background: white;
+    width: 45px;
+    height: 45px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.view-resume-btn {
+    -webkit-border-radius: 26;
+    -moz-border-radius: 26;
+    border-radius: 26px;
+    font-family: Arial;
+    color: #000000;
+    background: #ffffff;
+    text-decoration: none;
+    padding: 7px 15px 7px 15px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.icon-bold-border {
+    stroke-width: 0.8 !important;
+}

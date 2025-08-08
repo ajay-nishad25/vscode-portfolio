@@ -1,15 +1,94 @@
 import React from "react";
+import "styles/file.css";
+import "styles/search.css";
+import "styles/git.css";
+import { Col, Row } from "react-bootstrap";
+import { VscEllipsis } from "react-icons/vsc";
+import { VscChevronDown } from "react-icons/vsc";
+import { VscCheck } from "react-icons/vsc";
+import useMediaQuery from "utils/useMediaQuery";
 
-function Git() {
+export default function Git() {
+  const isMobile = useMediaQuery("(max-width: 574px)");
   return (
-    <div className="temp-message-container">
-      <div className="h-100 div-flex-center div-align-center">
-        <div className="">
-          <span className="text-grey text-sm">Git Screen</span>
-        </div>
-      </div>
+    <div className="div-flex-column">
+      <Row className="explore-section-height p-0 m-0 gx-0 ">
+        {!isMobile && (
+          <Col
+            xl={2}
+            lg={3}
+            md={4}
+            sm={5}
+            xs={2}
+            className="explorer-bg grey-border-right"
+          >
+            <div className="div-flex-column hp-10 ">
+              <div className="div-space-between vp-5">
+                <div className="div-flex-column">
+                  <span className="text-sm text-grey">SOURCE CONTROL</span>
+                </div>
+
+                <div className="div-flex-row cg-5 div-align-center">
+                  <VscEllipsis className="icon-size-14" color="grey" />
+                </div>
+              </div>
+              <div className="div-flex-column">
+                <div className="div-flex-row w-100 vp-5 cg-5">
+                  <VscChevronDown
+                    className={`icon-size-14 open-arrow-downward `}
+                  />
+                  <div className="div-flex-column w-100 rg-5">
+                    <span className="text-sm">CHANGES</span>
+                    <div className="div-flex-column w-100 rg-5">
+                      <div class="search-input-container">
+                        <input
+                          type="text"
+                          class="search-input grey-placeholder"
+                          placeholder='Message (Ctrl+Enter to commit on "git-page")'
+                        />
+                      </div>
+                      <div class="commit-button-container">
+                        <Row>
+                          <Col
+                            xxl={10}
+                            lg={10}
+                            md={10}
+                            sm={10}
+                            xs={10}
+                            className=" div-flex-column div-flex-center white-border-right"
+                          >
+                            <div className="div-flex-row div-flex-center div-align-center cg-5">
+                              <VscCheck className={`icon-size-14`} />
+                              <span className="text-sm ">Commit</span>
+                            </div>
+                          </Col>
+                          <Col
+                            xxl={2}
+                            lg={2}
+                            md={2}
+                            sm={2}
+                            xs={2}
+                            className=" div-flex-column div-flex-center"
+                          >
+                            <VscChevronDown
+                              className={`icon-size-14 open-arrow-downward `}
+                            />
+                          </Col>
+                        </Row>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Col>
+        )}
+        <Col xl={10} lg={9} md={8} sm={7} xs={12}>
+          <div className="div-flex-column">
+            <div className="tab-content-area tab-main-content-bg"></div>
+          </div>
+        </Col>
+      </Row>
     </div>
   );
 }
-
-export default Git;

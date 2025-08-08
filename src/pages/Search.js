@@ -58,7 +58,7 @@ export default function Search() {
             <div className="div-flex-column hp-10 ">
               <div className="div-space-between vp-5">
                 <div className="div-flex-column">
-                  <span className="text-sm">SEARCH</span>
+                  <span className="text-sm text-grey">SEARCH</span>
                 </div>
 
                 <div className="div-flex-row cg-5 div-align-center">

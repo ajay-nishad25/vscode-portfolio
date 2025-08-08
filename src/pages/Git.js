@@ -3,15 +3,9 @@ import "styles/file.css";
 import "styles/search.css";
 import "styles/git.css";
 import { Col, Row } from "react-bootstrap";
-import { VscRefresh } from "react-icons/vsc";
-import { VscClearAll } from "react-icons/vsc";
-import { VscNewFile } from "react-icons/vsc";
-import { VscListFlat } from "react-icons/vsc";
-import { VscCollapseAll } from "react-icons/vsc";
-// import { VscWholeWord } from "react-icons/vsc";
-// import { VscCaseSensitive } from "react-icons/vsc";
-// import { VscRegex } from "react-icons/vsc";
+import { VscEllipsis } from "react-icons/vsc";
 import { VscChevronDown } from "react-icons/vsc";
+import { VscCheck } from "react-icons/vsc";
 import useMediaQuery from "utils/useMediaQuery";
 
 export default function Git() {
@@ -31,15 +25,11 @@ export default function Git() {
             <div className="div-flex-column hp-10 ">
               <div className="div-space-between vp-5">
                 <div className="div-flex-column">
-                  <span className="text-sm">SOURCE CONTROL</span>
+                  <span className="text-sm text-grey">SOURCE CONTROL</span>
                 </div>
 
                 <div className="div-flex-row cg-5 div-align-center">
-                  <VscRefresh className="icon-size-14" color="grey" />
-                  <VscClearAll className="icon-size-14" color="grey" />
-                  <VscNewFile className="icon-size-14" color="grey" />
-                  <VscListFlat className="icon-size-14" color="grey" />
-                  <VscCollapseAll className="icon-size-14" color="grey" />
+                  <VscEllipsis className="icon-size-14" color="grey" />
                 </div>
               </div>
               <div className="div-flex-column">
@@ -48,7 +38,7 @@ export default function Git() {
                     className={`icon-size-14 open-arrow-downward `}
                   />
                   <div className="div-flex-column w-100 rg-5">
-                    <span className="text-sm ">Changes</span>
+                    <span className="text-sm">CHANGES</span>
                     <div className="div-flex-column w-100 rg-5">
                       <div class="search-input-container">
                         <input
@@ -58,11 +48,33 @@ export default function Git() {
                         />
                       </div>
                       <div class="commit-button-container">
-                        <input
-                          type="text"
-                          class="search-input grey-placeholder"
-                          placeholder='Message (Ctrl+Enter to commit on "git-page")'
-                        />
+                        <Row>
+                          <Col
+                            xxl={10}
+                            lg={10}
+                            md={10}
+                            sm={10}
+                            xs={10}
+                            className=" div-flex-column div-flex-center white-border-right"
+                          >
+                            <div className="div-flex-row div-flex-center div-align-center cg-5">
+                              <VscCheck className={`icon-size-14`} />
+                              <span className="text-sm ">Commit</span>
+                            </div>
+                          </Col>
+                          <Col
+                            xxl={2}
+                            lg={2}
+                            md={2}
+                            sm={2}
+                            xs={2}
+                            className=" div-flex-column div-flex-center"
+                          >
+                            <VscChevronDown
+                              className={`icon-size-14 open-arrow-downward `}
+                            />
+                          </Col>
+                        </Row>
                       </div>
                     </div>
                   </div>

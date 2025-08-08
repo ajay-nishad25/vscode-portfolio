@@ -3,10 +3,12 @@
 }
 
 .commit-button-container {
-    height: 25px;
     border-radius: 2px;
     border: 1px solid rgba(204, 204, 204, 0.134);
-    background-color: #3e4347db;
-    display: flex;
-    align-items: center;
+    background-color: #3376cd;
+    padding: 2px 0px 2px 0px;
+}
+
+.white-border-right {
+    border-right: 1px solid #a59d9d81;
 }

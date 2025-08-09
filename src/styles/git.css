@@ -12,3 +12,7 @@
 .white-border-right {
     border-right: 1px solid #a59d9d81;
 }
+
+.temp {
+    border: 1px solid red;
+}

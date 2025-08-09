@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "styles/file.css";
 import "styles/search.css";
 import "styles/git.css";
@@ -7,9 +7,22 @@ import { VscEllipsis } from "react-icons/vsc";
 import { VscChevronDown } from "react-icons/vsc";
 import { VscCheck } from "react-icons/vsc";
 import useMediaQuery from "utils/useMediaQuery";
+import { useDispatch, useSelector } from "react-redux";
+import { getGithubProfileBasicData } from "../redux/Actions/githubActions";
 
 export default function Git() {
   const isMobile = useMediaQuery("(max-width: 574px)");
+  const dispatch = useDispatch();
+
+  const githubReducer = useSelector((state) => state.githubReducer);
+  const { githubProfileBasicData } = githubReducer;
+
+  useEffect(() => {
+    dispatch(getGithubProfileBasicData("ajay-nishad25"));
+  }, [dispatch]);
+
+  console.log("githubProfileBasicData", githubProfileBasicData);
+
   return (
     <div className="div-flex-column">
       <Row className="explore-section-height p-0 m-0 gx-0 ">
@@ -40,14 +53,14 @@ export default function Git() {
                   <div className="div-flex-column w-100 rg-5">
                     <span className="text-sm">CHANGES</span>
                     <div className="div-flex-column w-100 rg-5">
-                      <div class="search-input-container">
+                      <div className="search-input-container">
                         <input
                           type="text"
-                          class="search-input grey-placeholder"
+                          className="search-input grey-placeholder"
                           placeholder='Message (Ctrl+Enter to commit on "git-page")'
                         />
                       </div>
-                      <div class="commit-button-container">
+                      <div className="commit-button-container">
                         <Row>
                           <Col
                             xxl={10}
@@ -85,7 +98,14 @@ export default function Git() {
         )}
         <Col xl={10} lg={9} md={8} sm={7} xs={12}>
           <div className="div-flex-column">
-            <div className="tab-content-area tab-main-content-bg"></div>
+            <div className="tab-content-area tab-main-content-bg">
+              <div className="div-flex-column h-100 temp">
+                <Row>
+                  <Col xxl={4} xl={4} lg={4} md={4} sm={4}></Col>
+                  <Col xxl={8} xl={8} lg={8} md={8} sm={8}></Col>
+                </Row>
+              </div>
+            </div>
           </div>
         </Col>
       </Row>

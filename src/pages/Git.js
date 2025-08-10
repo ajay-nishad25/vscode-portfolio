@@ -3,12 +3,23 @@ import "styles/file.css";
 import "styles/search.css";
 import "styles/git.css";
 import { Col, Row } from "react-bootstrap";
-import { VscEllipsis } from "react-icons/vsc";
-import { VscChevronDown } from "react-icons/vsc";
-import { VscCheck } from "react-icons/vsc";
+import { VscEllipsis, VscChevronDown, VscCheck } from "react-icons/vsc";
 import useMediaQuery from "utils/useMediaQuery";
 import { useDispatch, useSelector } from "react-redux";
 import { getGithubProfileBasicData } from "../redux/Actions/githubActions";
+import { GoLocation } from "react-icons/go";
+import { GoPeople } from "react-icons/go";
+
+import { ReactComponent as AndroidIcon } from "images/icons/android.svg";
+import { ReactComponent as BootstrapIcon } from "images/icons/bootstrap.svg";
+import { ReactComponent as CLanguageIcon } from "images/icons/c.svg";
+import { ReactComponent as CSSIcon } from "images/icons/css.svg";
+import { ReactComponent as FirebaseIcon } from "images/icons/firebase.svg";
+import { ReactComponent as GitIcon } from "images/icons/git.svg";
+import { ReactComponent as JavaIcon } from "images/icons/java.svg";
+import { ReactComponent as JavaScriptIcon } from "images/icons/js.svg";
+import { ReactComponent as LinuxIcon } from "images/icons/linux.svg";
+import { ReactComponent as ReactLogoIcon } from "images/icons/react.svg";
 
 export default function Git() {
   const isMobile = useMediaQuery("(max-width: 574px)");
@@ -40,7 +51,6 @@ export default function Git() {
                 <div className="div-flex-column">
                   <span className="text-sm text-grey">SOURCE CONTROL</span>
                 </div>
-
                 <div className="div-flex-row cg-5 div-align-center">
                   <VscEllipsis className="icon-size-14" color="grey" />
                 </div>
@@ -96,17 +106,96 @@ export default function Git() {
             </div>
           </Col>
         )}
+
         <Col xl={10} lg={9} md={8} sm={7} xs={12}>
-          <div className="div-flex-column">
-            <div className="tab-content-area tab-main-content-bg">
-              <div className="div-flex-column h-100 temp">
-                <Row>
-                  <Col xxl={4} xl={4} lg={4} md={4} sm={4}></Col>
-                  <Col xxl={8} xl={8} lg={8} md={8} sm={8}></Col>
-                </Row>
+          <Row className="py-3 px-3 ">
+            <Col xxl={2} xl={2} lg={2} md={5} sm={12}>
+              <div className="profile-img-wrapper">
+                <img
+                  src={githubProfileBasicData?.avatar_url}
+                  alt={
+                    githubProfileBasicData?.name ||
+                    githubProfileBasicData?.login
+                  }
+                  className="profile-image rounded-circle"
+                />
               </div>
-            </div>
-          </div>
+              <div className="div-flex-column rg-20 vp-15">
+                <div className="div-flex-column">
+                  <span className="text-xxl text-semi-bold">
+                    {githubProfileBasicData?.name}
+                  </span>
+                  <span className="text-md text-grey">
+                    {githubProfileBasicData?.login} · he/him
+                  </span>
+                </div>
+                <span className="text-md">{githubProfileBasicData?.bio}</span>
+                <div className="div-flex-column rg-5">
+                  <div className="div-flex-row div-align-center cg-5">
+                    <GoPeople color="grey" />
+                    <span className="text-md text-grey">
+                      <strong>{githubProfileBasicData?.followers}</strong>{" "}
+                      followers ·{" "}
+                      <strong>{githubProfileBasicData?.following}</strong>{" "}
+                      following
+                    </span>
+                  </div>
+                  <div className="div-flex-row div-align-center cg-5">
+                    <GoLocation color="grey" />
+                    <span className="text-md text-grey">
+                      {githubProfileBasicData?.location}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col
+              xxl={10}
+              xl={10}
+              lg={10}
+              md={7}
+              sm={12}
+              className="profile-main"
+            >
+              <div className="common-border-white ">
+                <div className="div-flex-row div-flex-center vp-20 grey-border-bottom">
+                  <span className="text-xxl text-semi-bold">
+                    Hi{" "}
+                    <span role="img" aria-label="wave">
+                      👋
+                    </span>
+                    , I'm {githubProfileBasicData?.name}
+                  </span>
+                </div>
+
+                <div className="div-flex-row hp-20">
+                  <span className="text-lg text-semi-bold  vp-10">
+                    {githubProfileBasicData?.bio}
+                  </span>
+                </div>
+
+                <div className="div-flex-column hp-20 ">
+                  <div className="div-flex-row">
+                    <span className="text-md text-semi-bold vp-10">
+                      Languages and Tools:
+                    </span>
+                  </div>
+                  <div className="div-flex-row cg-10 vp-20">
+                    <AndroidIcon className="icon-size-35" />
+                    <BootstrapIcon className="icon-size-35" />
+                    <CLanguageIcon className="icon-size-35" />
+                    <CSSIcon className="icon-size-35" />
+                    <FirebaseIcon className="icon-size-35" />
+                    <GitIcon className="icon-size-35" />
+                    <JavaIcon className="icon-size-35" />
+                    <JavaScriptIcon className="icon-size-35" />
+                    <LinuxIcon className="icon-size-35" />
+                    <ReactLogoIcon className="icon-size-35" />
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </div>

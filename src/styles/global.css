@@ -184,6 +184,16 @@
     height: 27px;
 }
 
+.icon-size-30 {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-size-35 {
+    width: 35px;
+    height: 35px;
+}
+
 .temp-container {
     height: 100px;
     border: 1px solid;
@@ -271,4 +281,9 @@
     color: inherit;
     font: inherit;
     cursor: pointer;
+}
+
+.common-border-white {
+    border: 1px solid rgba(80, 80, 80, 0.84);
+    border-radius: 0.37rem;
 }

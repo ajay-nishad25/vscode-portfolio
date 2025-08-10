@@ -36,7 +36,7 @@ export default function Git() {
 
   return (
     <div className="div-flex-column">
-      <Row className="explore-section-height p-0 m-0 gx-0 ">
+      <Row className="explore-section-height  p-0 m-0 gx-0 ">
         {!isMobile && (
           <Col
             xl={2}
@@ -107,7 +107,14 @@ export default function Git() {
           </Col>
         )}
 
-        <Col xl={10} lg={9} md={8} sm={7} xs={12}>
+        <Col
+          xl={10}
+          lg={9}
+          md={8}
+          sm={7}
+          xs={12}
+          className="github-profile-detail-section"
+        >
           <Row className="py-3 px-3 ">
             <Col xxl={2} xl={2} lg={2} md={5} sm={12}>
               <div className="profile-img-wrapper">
@@ -157,7 +164,7 @@ export default function Git() {
               sm={12}
               className="profile-main"
             >
-              <div className="common-border-white ">
+              <div className="common-border-white hp-20 ">
                 <div className="div-flex-row div-flex-center vp-20 grey-border-bottom">
                   <span className="text-xxl text-semi-bold">
                     Hi{" "}
@@ -168,13 +175,13 @@ export default function Git() {
                   </span>
                 </div>
 
-                <div className="div-flex-row hp-20">
+                <div className="div-flex-row ">
                   <span className="text-lg text-semi-bold  vp-10">
                     {githubProfileBasicData?.bio}
                   </span>
                 </div>
 
-                <div className="div-flex-column hp-20 ">
+                <div className="div-flex-column  ">
                   <div className="div-flex-row">
                     <span className="text-md text-semi-bold vp-10">
                       Languages and Tools:

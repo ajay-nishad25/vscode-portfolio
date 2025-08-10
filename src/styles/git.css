@@ -13,9 +13,7 @@
     border-right: 1px solid #a59d9d81;
 }
 
-.temp {
-    border: 1px solid red;
-}
+
 
 .profile-img-wrapper {
     display: flex;
@@ -32,4 +30,21 @@
 
 .rounded-circle {
     border-radius: 50%;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .github-profile-detail-section {
+        max-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .github-profile-detail-section::-webkit-scrollbar {
+        display: none;
+    }
 }

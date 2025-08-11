@@ -49,6 +49,10 @@
     color: white;
 }
 
+.text-blue {
+    color: #4493f8;
+}
+
 .text-semi-bold {
     font-weight: 600;
 }
@@ -286,4 +290,10 @@
 .common-border-white {
     border: 1px solid rgba(80, 80, 80, 0.84);
     border-radius: 0.37rem;
+}
+
+.blank-pill {
+    border: 1px solid grey;
+    padding: 2px 10px 2px 10px;
+    border-radius: 20px;
 }

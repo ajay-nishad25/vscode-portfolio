@@ -32,8 +32,6 @@ export default function Git() {
     dispatch(getGithubProfileBasicData("ajay-nishad25"));
   }, [dispatch]);
 
-  console.log("githubProfileBasicData", githubProfileBasicData);
-
   return (
     <div className="div-flex-column">
       <Row className="explore-section-height  p-0 m-0 gx-0 ">
@@ -164,43 +162,83 @@ export default function Git() {
               sm={12}
               className="profile-main"
             >
-              <div className="common-border-white hp-20 ">
-                <div className="div-flex-row div-flex-center vp-20 grey-border-bottom">
-                  <span className="text-xxl text-semi-bold">
-                    Hi{" "}
-                    <span role="img" aria-label="wave">
-                      👋
-                    </span>
-                    , I'm {githubProfileBasicData?.name}
-                  </span>
-                </div>
-
-                <div className="div-flex-row ">
-                  <span className="text-lg text-semi-bold  vp-10">
-                    {githubProfileBasicData?.bio}
-                  </span>
-                </div>
-
-                <div className="div-flex-column  ">
-                  <div className="div-flex-row">
-                    <span className="text-md text-semi-bold vp-10">
-                      Languages and Tools:
+              <Col
+                xxl={12}
+                xl={12}
+                lg={12}
+                md={12}
+                sm={12}
+                className="profile-main"
+              >
+                <div className="common-border-white hp-20 ">
+                  <div className="div-flex-row div-flex-center vp-20 grey-border-bottom">
+                    <span className="text-xxl text-semi-bold">
+                      Hi{" "}
+                      <span role="img" aria-label="wave">
+                        👋
+                      </span>
+                      , I'm {githubProfileBasicData?.name}
                     </span>
                   </div>
-                  <div className="div-flex-row cg-10 vp-20">
-                    <AndroidIcon className="icon-size-35" />
-                    <BootstrapIcon className="icon-size-35" />
-                    <CLanguageIcon className="icon-size-35" />
-                    <CSSIcon className="icon-size-35" />
-                    <FirebaseIcon className="icon-size-35" />
-                    <GitIcon className="icon-size-35" />
-                    <JavaIcon className="icon-size-35" />
-                    <JavaScriptIcon className="icon-size-35" />
-                    <LinuxIcon className="icon-size-35" />
-                    <ReactLogoIcon className="icon-size-35" />
+
+                  <div className="div-flex-row ">
+                    <span className="text-lg text-semi-bold  vp-10">
+                      {githubProfileBasicData?.bio}
+                    </span>
+                  </div>
+
+                  <div className="div-flex-column  ">
+                    <div className="div-flex-row">
+                      <span className="text-md text-semi-bold vp-10">
+                        Languages and Tools:
+                      </span>
+                    </div>
+                    <div className="div-flex-row cg-10 vp-20">
+                      <AndroidIcon className="icon-size-35" />
+                      <BootstrapIcon className="icon-size-35" />
+                      <CLanguageIcon className="icon-size-35" />
+                      <CSSIcon className="icon-size-35" />
+                      <FirebaseIcon className="icon-size-35" />
+                      <GitIcon className="icon-size-35" />
+                      <JavaIcon className="icon-size-35" />
+                      <JavaScriptIcon className="icon-size-35" />
+                      <LinuxIcon className="icon-size-35" />
+                      <ReactLogoIcon className="icon-size-35" />
+                    </div>
                   </div>
                 </div>
+              </Col>
+              <div className="div-flex-row vp-10">
+                <span className="text-md text-semi-bold">
+                  Popular repositories
+                </span>
               </div>
+              <Row>
+                <Col xxl={6} xl={6} lg={6} md={6} sm={6}>
+                  <div className="div-flex-column div-flex-center project-repo-card-height common-border-white hp-20">
+                    <div className="div-flex-column">
+                      <div className="div-flex-row div-space-between">
+                        <span className="text-md text-semi-bold text-blue">
+                          React-TODO
+                        </span>
+                        <span className="text-sm text-semi-bold blank-pill">
+                          Public
+                        </span>
+                      </div>
+                      <div className="div-flex-column vp-5">
+                        <span className="text-sm text-grey">
+                          Don't try to remember everything instead, use TODO
+                          react app.
+                        </span>
+                      </div>
+                      <div className="div-flex-row">
+                        <span>Javascript</span>
+                        <span>start</span>
+                      </div>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Col>

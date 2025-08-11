@@ -13,8 +13,6 @@
     border-right: 1px solid #a59d9d81;
 }
 
-
-
 .profile-img-wrapper {
     display: flex;
     justify-content: center;
@@ -32,9 +30,6 @@
     border-radius: 50%;
 }
 
-
-
-
 @media (max-width: 768px) {
     .github-profile-detail-section {
         max-height: 100vh;
@@ -47,4 +42,8 @@
     .github-profile-detail-section::-webkit-scrollbar {
         display: none;
     }
+}
+
+.project-repo-card-height {
+    height: 100px;
 }

@@ -6,10 +6,12 @@ import { Col, Row } from "react-bootstrap";
 import { VscEllipsis, VscChevronDown, VscCheck } from "react-icons/vsc";
 import useMediaQuery from "utils/useMediaQuery";
 import { useDispatch, useSelector } from "react-redux";
-import { getGithubProfileBasicData } from "../redux/Actions/githubActions";
+import {
+  getGithubProfileBasicData,
+  getStarredReposList,
+} from "../redux/Actions/githubActions";
 import { GoLocation } from "react-icons/go";
 import { GoPeople } from "react-icons/go";
-
 import { ReactComponent as AndroidIcon } from "images/icons/android.svg";
 import { ReactComponent as BootstrapIcon } from "images/icons/bootstrap.svg";
 import { ReactComponent as CLanguageIcon } from "images/icons/c.svg";
@@ -20,21 +22,34 @@ import { ReactComponent as JavaIcon } from "images/icons/java.svg";
 import { ReactComponent as JavaScriptIcon } from "images/icons/js.svg";
 import { ReactComponent as LinuxIcon } from "images/icons/linux.svg";
 import { ReactComponent as ReactLogoIcon } from "images/icons/react.svg";
+import { GoStar } from "react-icons/go";
+import { getLanguageColor } from "utils/getLanguageColor";
 
 export default function Git() {
   const isMobile = useMediaQuery("(max-width: 574px)");
   const dispatch = useDispatch();
 
   const githubReducer = useSelector((state) => state.githubReducer);
-  const { githubProfileBasicData } = githubReducer;
+  const { githubProfileBasicData, githubStarredReposList } = githubReducer;
 
   useEffect(() => {
     dispatch(getGithubProfileBasicData("ajay-nishad25"));
+    dispatch(getStarredReposList("ajay-nishad25"));
   }, [dispatch]);
 
+  const filteredStarredRepoList = githubStarredReposList?.filter(
+    (item) => item?.owner?.login === "ajay-nishad25",
+  );
+
+  function handleRepoLink(url) {
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  }
+
   return (
-    <div className="div-flex-column">
-      <Row className="explore-section-height  p-0 m-0 gx-0 ">
+    <div className="h-100 div-flex-column">
+      <Row className="h-100  p-0 m-0 gx-0 ">
         {!isMobile && (
           <Col
             xl={2}
@@ -114,7 +129,7 @@ export default function Git() {
           className="github-profile-detail-section"
         >
           <Row className="py-3 px-3 ">
-            <Col xxl={2} xl={2} lg={2} md={5} sm={12}>
+            <Col xxl={3} xl={3} lg={3} md={5} sm={12}>
               <div className="profile-img-wrapper">
                 <img
                   src={githubProfileBasicData?.avatar_url}
@@ -154,14 +169,7 @@ export default function Git() {
                 </div>
               </div>
             </Col>
-            <Col
-              xxl={10}
-              xl={10}
-              lg={10}
-              md={7}
-              sm={12}
-              className="profile-main"
-            >
+            <Col xxl={9} xl={9} lg={9} md={7} sm={12} className="profile-main">
               <Col
                 xxl={12}
                 xl={12}
@@ -213,31 +221,61 @@ export default function Git() {
                   Popular repositories
                 </span>
               </div>
-              <Row>
-                <Col xxl={6} xl={6} lg={6} md={6} sm={6}>
-                  <div className="div-flex-column div-flex-center project-repo-card-height common-border-white hp-20">
-                    <div className="div-flex-column">
-                      <div className="div-flex-row div-space-between">
-                        <span className="text-md text-semi-bold text-blue">
-                          React-TODO
-                        </span>
-                        <span className="text-sm text-semi-bold blank-pill">
-                          Public
-                        </span>
+              <Row className="g-3">
+                {filteredStarredRepoList?.map((repoObj) => {
+                  return (
+                    <Col
+                      xxl={6}
+                      xl={6}
+                      lg={6}
+                      md={12}
+                      sm={12}
+                      xs={12}
+                      key={repoObj?.id}
+                    >
+                      <div className="div-flex-column div-flex-center common-border-white hp-10">
+                        <div className="div-flex-column vp-10">
+                          <div className="div-flex-row div-space-between">
+                            <span
+                              className="text-md text-semi-bold text-blue cursor-pointer"
+                              onClick={() => handleRepoLink(repoObj?.html_url)}
+                            >
+                              {repoObj.name}
+                            </span>
+                            <span className="text-sm text-semi-bold blank-pill">
+                              {repoObj.private ? "Private" : "Public"}
+                            </span>
+                          </div>
+                          <div className="div-flex-column vp-10">
+                            <span className="text-sm text-grey">
+                              {repoObj.description ||
+                                "No description available"}
+                            </span>
+                          </div>
+                          <div className="div-flex-row cg-20">
+                            <div className="div-flex-row div-align-center cg-5">
+                              <span
+                                className="circle-span"
+                                style={{
+                                  backgroundColor: getLanguageColor(
+                                    repoObj?.language,
+                                  ),
+                                }}
+                              />
+                              <span className="text-sm text-semi-bold text-grey">
+                                {repoObj?.language || "N/A"}
+                              </span>
+                            </div>
+                            <span className="text-sm text-semi-bold text-grey div-flex-row div-align-center cg-5 ">
+                              <GoStar className="icon-size-14" />
+                              {repoObj?.stargazers_count ?? 0}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="div-flex-column vp-5">
-                        <span className="text-sm text-grey">
-                          Don't try to remember everything instead, use TODO
-                          react app.
-                        </span>
-                      </div>
-                      <div className="div-flex-row">
-                        <span>Javascript</span>
-                        <span>start</span>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
+                    </Col>
+                  );
+                })}
               </Row>
             </Col>
           </Row>

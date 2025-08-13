@@ -12,11 +12,11 @@ import { VscCaseSensitive } from "react-icons/vsc";
 import { VscRegex } from "react-icons/vsc";
 import { VscChevronDown } from "react-icons/vsc";
 import useMediaQuery from "utils/useMediaQuery";
-import GithubImage from "images/github.png";
-import GmailImage from "images/gmail.png";
-import InstagramImage from "images/instagram.png";
-import LinkedinImage from "images/linkedin.png";
 import { VscLinkExternal } from "react-icons/vsc";
+import { ReactComponent as GithubIcon } from "images/icons/github-svg.svg";
+import { ReactComponent as GmailIcon } from "images/icons/gmail-svg.svg";
+import { ReactComponent as LinkedinIcon } from "images/icons/linkedin-svg.svg";
+import { ReactComponent as InstagramIcon } from "images/icons/instagram-svg.svg";
 
 export default function Search() {
   const isMobile = useMediaQuery("(max-width: 574px)");
@@ -113,18 +113,7 @@ export default function Search() {
                       handleUserNavigate("1");
                     }}
                   >
-                    <picture>
-                      <source
-                        srcSet={require("images/github.png")}
-                        type="image/png"
-                      />
-                      <img
-                        src={GithubImage}
-                        alt="github"
-                        width="30"
-                        height="30"
-                      />
-                    </picture>
+                    <GithubIcon />
                   </button>
                   <button
                     className="site-icon-background"
@@ -132,18 +121,7 @@ export default function Search() {
                       handleUserNavigate("2");
                     }}
                   >
-                    <picture>
-                      <source
-                        srcSet={require("images/gmail.png")}
-                        type="image/png"
-                      />
-                      <img
-                        src={GmailImage}
-                        alt="gmail"
-                        width="30"
-                        height="30"
-                      />
-                    </picture>
+                    <GmailIcon />
                   </button>
                   <button
                     className="site-icon-background"
@@ -151,18 +129,7 @@ export default function Search() {
                       handleUserNavigate("3");
                     }}
                   >
-                    <picture>
-                      <source
-                        srcSet={require("images/linkedin.png")}
-                        type="image/png"
-                      />
-                      <img
-                        src={LinkedinImage}
-                        alt="linkedin"
-                        width="28"
-                        height="28"
-                      />
-                    </picture>
+                    <LinkedinIcon />
                   </button>
                   <button
                     className="site-icon-background"
@@ -170,18 +137,7 @@ export default function Search() {
                       handleUserNavigate("4");
                     }}
                   >
-                    <picture>
-                      <source
-                        srcSet={require("images/instagram.png")}
-                        type="image/png"
-                      />
-                      <img
-                        src={InstagramImage}
-                        alt="instagram"
-                        width="30"
-                        height="30"
-                      />
-                    </picture>
+                    <InstagramIcon />
                   </button>
                 </div>
                 <div className="div-flex-column vp-10 text-center w-100">

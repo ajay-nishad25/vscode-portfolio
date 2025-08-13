@@ -1,7 +1,7 @@
 import {
   VscFiles,
   VscSearch,
-  VscDebugAlt,
+  // VscDebugAlt,
   VscExtensions,
 } from "react-icons/vsc";
 import { IoIosGitBranch } from "react-icons/io";
@@ -29,13 +29,13 @@ function GetSidebarData() {
       iconComponent: IoIosGitBranch,
       matchUrls: ["/git"],
     },
-    {
-      id: 4,
-      name: "Debug",
-      url: "debug/",
-      iconComponent: VscDebugAlt,
-      matchUrls: ["/debug"],
-    },
+    // {
+    //   id: 4,
+    //   name: "Debug",
+    //   url: "debug/",
+    //   iconComponent: VscDebugAlt,
+    //   matchUrls: ["/debug"],
+    // },
     {
       id: 5,
       name: "Extension",

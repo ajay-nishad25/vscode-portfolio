@@ -129,7 +129,7 @@ export default function File() {
             <div className="div-flex-column hp-10">
               <div className="div-space-between vp-5">
                 <span className="text-sm text-grey">EXPLORER</span>
-                <VscEllipsis className="icon-size-20" />
+                <VscEllipsis className="icon-size-14" color="grey" />
               </div>
               <div className="div-flex-column vp-5 ">
                 <div className="div-flex-row  div-space-between div-align-center cursor-pointer">

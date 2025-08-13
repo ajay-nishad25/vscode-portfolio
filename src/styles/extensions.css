@@ -1,0 +1,26 @@
+.temp {
+    border: 1px solid red;
+    border-radius: 6px;
+}
+
+
+.theme-card {
+    background: transparent;
+    color: white;
+}
+
+.theme-icon svg {
+    border-radius: 50%;
+    background: #0d1117;
+    padding: 10px;
+}
+
+.theme-card h6 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.theme-card p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}

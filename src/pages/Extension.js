@@ -82,7 +82,7 @@ export default function Extension() {
           <div className="div-flex-column">
             <div className="tab-content-area div-flex-center tab-main-content-bg">
               <div className="div-flex-column div-flex-center div-align-center">
-                <Row className="g-3 px-4">
+                <Row className="g-2 px-3">
                   {themes.map((theme, index) => (
                     <Col
                       key={index}

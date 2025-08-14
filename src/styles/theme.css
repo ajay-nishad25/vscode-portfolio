@@ -1,0 +1,55 @@
+/* vscode theme */
+[data-theme="vscode"] {
+    --main-bg: #333333;
+    --sidebar-bg: #1f1f1f;
+    --sidebar-text: #cccccc;
+    --text-primary: #ffffff;
+    --text-secondary: #adb5bd;
+    --hover-bg: #2a2d2e;
+    --accent-color: #007acc;
+    --border-color: rgba(80, 80, 80, 0.84);
+    --activetab-bg: #1e1e1e;
+    /* Slightly lighter than sidebar for contrast */
+}
+
+/* github theme */
+[data-theme="github"] {
+    --main-bg: #0d1117;
+    --sidebar-bg: #161b22;
+    --sidebar-text: #c9d1d9;
+    --text-primary: #ffffff;
+    --text-secondary: #8b949e;
+    --hover-bg: #21262d;
+    --accent-color: #58a6ff;
+    --border-color: #30363d;
+    --activetab-bg: #0d1117;
+    /* Matches main background for a flat style */
+}
+
+/* atom theme */
+[data-theme="atom"] {
+    --main-bg: #282c34;
+    --sidebar-bg: #21252b;
+    --sidebar-text: #abb2bf;
+    --text-primary: #ffffff;
+    --text-secondary: #9da5b4;
+    --hover-bg: #2c313c;
+    --accent-color: #61afef;
+    --border-color: #3e4451;
+    --activetab-bg: #181a1f;
+    /* Darker for strong contrast */
+}
+
+/* dracula theme */
+[data-theme="dracula"] {
+    --main-bg: #282a36;
+    --sidebar-bg: #1e1f29;
+    --sidebar-text: #f8f8f2;
+    --text-primary: #f8f8f2;
+    --text-secondary: #6272a4;
+    --hover-bg: #44475a;
+    --accent-color: #bd93f9;
+    --border-color: #44475a;
+    --activetab-bg: #343746;
+    /* Slightly lighter than sidebar */
+}

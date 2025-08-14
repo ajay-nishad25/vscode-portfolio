@@ -1,5 +1,6 @@
 .footer-background {
-    background-color: #1e1e1e;
+    /* background-color: #1e1e1e; */
+    background-color: var(--sidebar-bg);
 }
 
 .bottom-remote-container {

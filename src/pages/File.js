@@ -137,7 +137,9 @@ export default function File() {
                     <span>
                       <VscChevronDown className="icon-size-18" />
                     </span>
-                    <span className="text-sm text-semi-bold">portfolio</span>
+                    <span className="text-sm text-grey text-semi-bold">
+                      portfolio
+                    </span>
                   </div>
                   <div className="div-flex-row cg-5">
                     <VscNewFile className="icon-size-14" color="white" />
@@ -163,7 +165,9 @@ export default function File() {
                     <span>
                       <PiFolderSimpleFill className="icon-size-16" />
                     </span>
-                    <span className="text-sm text-weight-light">portfolio</span>
+                    <span className="text-sm text-grey text-weight-light">
+                      portfolio
+                    </span>
                   </button>
                   {hideFolder && (
                     <div className="div-flex-column">
@@ -174,7 +178,7 @@ export default function File() {
                           onClick={() => handleFileClick(file.title)}
                         >
                           <span>{file.icon}</span>
-                          <span className="text-sm text-weight-light">
+                          <span className="text-sm text-grey text-weight-light">
                             {file.title}
                           </span>
                         </div>
@@ -199,10 +203,10 @@ export default function File() {
                   onClick={() => setActiveTab(file)}
                 >
                   {fileIcons[file]}
-                  <span className="text-sm">{file}</span>
+                  <span className="text-sm text-grey">{file}</span>
                   {!isMobile && (
                     <button
-                      className="close-btn"
+                      className="close-btn text-grey"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleCloseTab(file);

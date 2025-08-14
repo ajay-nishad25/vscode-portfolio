@@ -98,10 +98,10 @@ export default function Search() {
             <div className="tab-content-area tab-main-content-bg">
               <div className="div-flex-column">
                 <div className="div-flex-row vp-20 div-flex-center">
-                  <span className="text-big text-white">Let's connect</span>
+                  <span className="text-big text-grey">Let's connect</span>
                 </div>
                 <div className="div-flex-column vp-10 text-center w-100">
-                  <span className="text-white ">
+                  <span className=" text-grey">
                     You can reach out to me through these channels, and together
                     we can build something amazing.
                   </span>
@@ -141,12 +141,12 @@ export default function Search() {
                   </button>
                 </div>
                 <div className="div-flex-column vp-10 text-center w-100">
-                  <span className="text-white">
+                  <span className="text-grey">
                     Feel free to contact me anytime
                   </span>
                 </div>
                 <div className="div-flex-column vp-10 text-center w-100">
-                  <span className="text-white">
+                  <span className="text-grey">
                     I'm excited to collaborate and create great things with you.
                   </span>
                 </div>
@@ -157,7 +157,7 @@ export default function Search() {
                     className="icon-size-18 icon-bold-border"
                     color="black"
                   />
-                  <span>View Resume</span>
+                  <span className="text-grey">View Resume</span>
                 </button>
               </div>
             </div>

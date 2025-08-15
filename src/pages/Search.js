@@ -28,8 +28,7 @@ export default function Search() {
         url = "https://github.com/ajay-nishad25";
         break;
       case "2":
-        url =
-          "https://mail.google.com/mail/?view=cm&to=ajaynishad4123@gmail.com";
+        window.location.href = "mailto:ajaynishad4123@gmail.com";
         break;
       case "3":
         url = "https://www.linkedin.com/in/ajay-nishad25/";
@@ -44,7 +43,7 @@ export default function Search() {
       default:
         return;
     }
-    window.open(url, "_blank", "noopener,noreferrer");
+    if (page !== "2") window.open(url, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -104,7 +103,7 @@ export default function Search() {
                 <div className="div-flex-row vp-20 div-flex-center">
                   <span className="text-big text-grey">Let's connect</span>
                 </div>
-                <div className="div-flex-column vp-10 text-center w-100">
+                <div className="div-flex-column vp-10 text-center w-100 hp-10">
                   <span className=" text-grey">
                     You can reach out to me through these channels, and together
                     we can build something amazing.

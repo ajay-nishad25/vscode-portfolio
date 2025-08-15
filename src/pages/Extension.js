@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "styles/file.css";
 import "styles/search.css";
 import "styles/extensions.css";
@@ -12,32 +12,43 @@ import VscodeTheme from "images/vscode-theme.png";
 import GithubTheme from "images/github-theme.png";
 import AtomTheme from "images/atom-theme.png";
 import DraculaTheme from "images/dracula-theme.png";
+import { getSavedTheme, setTheme } from "utils/theme";
 
 export default function Extension() {
   const isMobile = useMediaQuery("(max-width: 574px)");
 
   const themes = [
     {
-      name: "Vscode Theme",
-      icon: <img src={VscodeTheme} alt="vsocde" width="75px" height="75px" />,
-    },
-    {
+      id: "github",
       name: "Github Theme",
-      icon: <img src={GithubTheme} alt="github" width="75px" height="75px" />,
+      icon: <img src={GithubTheme} alt="github" width="60px" height="60px" />,
     },
     {
+      id: "vscode",
+      name: "Vscode Theme",
+      icon: <img src={VscodeTheme} alt="vscode" width="60px" height="60px" />,
+    },
+    {
+      id: "atom",
       name: "Atom Theme",
-      icon: <img src={AtomTheme} alt="atom" width="75px" height="75px" />,
+      icon: <img src={AtomTheme} alt="atom" width="60px" height="60px" />,
     },
     {
+      id: "dracula",
       name: "Dracula Theme",
-      icon: <img src={DraculaTheme} alt="dracula" width="75px" height="75px" />,
+      icon: <img src={DraculaTheme} alt="dracula" width="60px" height="60px" />,
     },
   ];
 
+  const [activeTheme, setActiveTheme] = useState(getSavedTheme());
+
+  useEffect(() => {
+    setTheme(activeTheme);
+  }, [activeTheme]);
+
   return (
-    <div className="div-flex-column">
-      <Row className="explore-section-height  p-0 m-0 gx-0 ">
+    <div className="h-100 div-flex-column">
+      <Row className="h-100 p-0 m-0 gx-0 ">
         {!isMobile && (
           <Col
             xl={2}
@@ -81,8 +92,8 @@ export default function Extension() {
         <Col xl={10} lg={9} md={8} sm={7} xs={12}>
           <div className="div-flex-column">
             <div className="tab-content-area div-flex-center tab-main-content-bg">
-              <div className="div-flex-column div-flex-center div-align-center">
-                <Row className="g-3 px-4">
+              <div className="div-flex-column div-flex-center div-align-center py-5">
+                <Row className="g-4 px-3 py-4">
                   {themes.map((theme, index) => (
                     <Col
                       key={index}
@@ -93,19 +104,27 @@ export default function Extension() {
                       sm={6}
                       xs={12}
                     >
-                      <div className="div-flex-column rg-10 theme-card text-center p-3 common-border-white">
+                      <div className="h-100 div-flex-column rg-10 theme-card text-center p-3 common-border-white">
                         <div className="theme-icon mb-3">{theme.icon}</div>
                         <div className="div-flex-column rg-10">
-                          <span className="text-lg text-semi-bold text-white">
+                          <span className="text-lg text-semi-bold  text-grey">
                             {theme.name}
                           </span>
                           <button
-                            variant="secondary"
-                            className="button-css-none common-border-white px-5"
+                            className={`div-flex-row div-flex-center theme-button common-border-white  px-5 ${
+                              activeTheme === theme.id ? "active" : ""
+                            }`}
+                            onClick={() => setActiveTheme(theme.id)}
                           >
-                            <span className="text-sm text-semi-bold">
-                              Apply Theme
-                            </span>
+                            {activeTheme === theme.id ? (
+                              <span className="text-sm text-semi-bold">
+                                Applied
+                              </span>
+                            ) : (
+                              <span className="text-sm text-semi-bold">
+                                Apply
+                              </span>
+                            )}
                           </button>
                         </div>
                       </div>

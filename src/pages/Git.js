@@ -49,7 +49,7 @@ export default function Git() {
 
   return (
     <div className="h-100 div-flex-column">
-      <Row className="h-100  p-0 m-0 gx-0 ">
+      <Row className="h-100 p-0 m-0 gx-0 ">
         {!isMobile && (
           <Col
             xl={2}
@@ -74,7 +74,7 @@ export default function Git() {
                     className={`icon-size-14 open-arrow-downward `}
                   />
                   <div className="div-flex-column w-100 rg-5">
-                    <span className="text-sm">CHANGES</span>
+                    <span className="text-sm  text-grey">CHANGES</span>
                     <div className="div-flex-column w-100 rg-5">
                       <div className="search-input-container">
                         <input
@@ -95,7 +95,7 @@ export default function Git() {
                           >
                             <div className="div-flex-row div-flex-center div-align-center cg-5">
                               <VscCheck className={`icon-size-14`} />
-                              <span className="text-sm ">Commit</span>
+                              <span className="text-sm text-white">Commit</span>
                             </div>
                           </Col>
                           <Col
@@ -142,14 +142,16 @@ export default function Git() {
               </div>
               <div className="div-flex-column rg-20 vp-15">
                 <div className="div-flex-column">
-                  <span className="text-xxl text-semi-bold">
+                  <span className="text-xxl text-grey text-semi-bold">
                     {githubProfileBasicData?.name}
                   </span>
                   <span className="text-md text-grey">
                     {githubProfileBasicData?.login} · he/him
                   </span>
                 </div>
-                <span className="text-md">{githubProfileBasicData?.bio}</span>
+                <span className="text-md text-grey">
+                  {githubProfileBasicData?.bio}
+                </span>
                 <div className="div-flex-column rg-5">
                   <div className="div-flex-row div-align-center cg-5">
                     <GoPeople color="grey" />
@@ -180,7 +182,7 @@ export default function Git() {
               >
                 <div className="common-border-white hp-20 ">
                   <div className="div-flex-row div-flex-center vp-20 grey-border-bottom">
-                    <span className="text-xxl text-semi-bold">
+                    <span className="text-xxl text-grey text-semi-bold">
                       Hi{" "}
                       <span role="img" aria-label="wave">
                         👋
@@ -190,14 +192,14 @@ export default function Git() {
                   </div>
 
                   <div className="div-flex-row ">
-                    <span className="text-lg text-semi-bold  vp-10">
+                    <span className="text-lg text-semi-bold text-grey vp-10">
                       {githubProfileBasicData?.bio}
                     </span>
                   </div>
 
                   <div className="div-flex-column  ">
                     <div className="div-flex-row">
-                      <span className="text-md text-semi-bold vp-10">
+                      <span className="text-md text-semi-bold text-grey vp-10">
                         Languages and Tools:
                       </span>
                     </div>
@@ -217,7 +219,7 @@ export default function Git() {
                 </div>
               </Col>
               <div className="div-flex-row vp-10">
-                <span className="text-md text-semi-bold">
+                <span className="text-md text-semi-bold text-grey">
                   Popular repositories
                 </span>
               </div>
@@ -242,7 +244,7 @@ export default function Git() {
                             >
                               {repoObj.name}
                             </span>
-                            <span className="text-sm text-semi-bold blank-pill">
+                            <span className="text-sm text-semi-bold blank-pill text-grey">
                               {repoObj.private ? "Private" : "Public"}
                             </span>
                           </div>

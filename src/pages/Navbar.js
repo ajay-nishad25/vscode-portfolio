@@ -8,7 +8,7 @@ import { PiCopyLight } from "react-icons/pi";
 import { VscSearch } from "react-icons/vsc";
 import { MdOutlineClose } from "react-icons/md";
 import useMediaQuery from "utils/useMediaQuery";
-import { ReactComponent as SearchIcon } from "images/icons/vscode.svg";
+import { ReactComponent as VsCodeLogo } from "images/icons/vscode.svg";
 import { ReactComponent as MacRed } from "images/icons/mac-red.svg";
 import { ReactComponent as MacYellow } from "images/icons/mac-yellow.svg";
 import { ReactComponent as MacGreen } from "images/icons/mac-green.svg";
@@ -49,7 +49,7 @@ function Navbar() {
           <Col xl={4} lg={4} md={4} sm={6} xs={6}>
             <div className="div-flex-row  div-align-center cg-20 text-white ">
               <div className="div-flex-row div-align-center cg-25">
-                <SearchIcon />
+                <VsCodeLogo />
               </div>
               {!isMobile && (
                 <div className="div-flex-row cg-15 cursor-pointer">

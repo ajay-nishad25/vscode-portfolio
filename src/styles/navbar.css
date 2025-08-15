@@ -7,9 +7,12 @@
     width: 450px;
     border: 1px solid rgba(204, 204, 204, 0.134);
     border-radius: 6px;
-    background-color: #3e4347db;
+    /* background-color: #3e4347db; */
+    background-color: var(--main-bg);
 }
 
 .navbar-theme-black {
-    background-color: #1f2428f7;
+    /* background-color: #1f2428f7; */
+    color: var(--sidebar-text);
+    background-color: var(--sidebar-bg);
 }

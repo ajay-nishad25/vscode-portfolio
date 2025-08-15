@@ -42,3 +42,15 @@ span.cm-tag.cm-tagName.cm-tagName-close {
     color: #569CD6 !important;
     /* Adjust this hex to match your desired color */
 }
+
+/* styles/codeEditor.css */
+.cm-editor .cm-gutters,
+.cm-editor .cm-gutter,
+.cm-editor .cm-foldGutter {
+    border-right: none !important;
+    box-shadow: none !important;
+}
+
+.cm-editor .cm-activeLineGutter {
+    background: transparent !important;
+}

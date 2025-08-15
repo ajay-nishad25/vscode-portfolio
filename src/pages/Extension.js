@@ -89,51 +89,40 @@ export default function Extension() {
             </div>
           </Col>
         )}
-        <Col xl={10} lg={9} md={8} sm={7} xs={12}>
-          <div className="div-flex-column">
-            <div className="tab-content-area div-flex-center tab-main-content-bg">
-              <div className="div-flex-column div-flex-center div-align-center py-5">
-                <Row className="g-4 px-3 py-4">
-                  {themes.map((theme, index) => (
-                    <Col
-                      key={index}
-                      xxl={3}
-                      xl={3}
-                      lg={6}
-                      md={6}
-                      sm={6}
-                      xs={12}
+        <Col
+          xl={10}
+          lg={9}
+          md={8}
+          sm={7}
+          xs={12}
+          className="github-profile-detail-section px-3"
+        >
+          <Row className="g-4 px-0 py-3 ">
+            {themes.map((theme, index) => (
+              <Col key={index} xxl={3} xl={3} lg={6} md={6} sm={6} xs={12}>
+                <div className="h-100 div-flex-column rg-10 theme-card text-center p-3 common-border-white">
+                  <div className="theme-icon mb-3">{theme.icon}</div>
+                  <div className="div-flex-column rg-10">
+                    <span className="text-lg text-semi-bold  text-grey">
+                      {theme.name}
+                    </span>
+                    <button
+                      className={`div-flex-row div-flex-center theme-button common-border-white  px-5 ${
+                        activeTheme === theme.id ? "active" : ""
+                      }`}
+                      onClick={() => setActiveTheme(theme.id)}
                     >
-                      <div className="h-100 div-flex-column rg-10 theme-card text-center p-3 common-border-white">
-                        <div className="theme-icon mb-3">{theme.icon}</div>
-                        <div className="div-flex-column rg-10">
-                          <span className="text-lg text-semi-bold  text-grey">
-                            {theme.name}
-                          </span>
-                          <button
-                            className={`div-flex-row div-flex-center theme-button common-border-white  px-5 ${
-                              activeTheme === theme.id ? "active" : ""
-                            }`}
-                            onClick={() => setActiveTheme(theme.id)}
-                          >
-                            {activeTheme === theme.id ? (
-                              <span className="text-sm text-semi-bold">
-                                Applied
-                              </span>
-                            ) : (
-                              <span className="text-sm text-semi-bold">
-                                Apply
-                              </span>
-                            )}
-                          </button>
-                        </div>
-                      </div>
-                    </Col>
-                  ))}
-                </Row>
-              </div>
-            </div>
-          </div>
+                      {activeTheme === theme.id ? (
+                        <span className="text-sm text-semi-bold">Applied</span>
+                      ) : (
+                        <span className="text-sm text-semi-bold">Apply</span>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
         </Col>
       </Row>
     </div>

@@ -13,34 +13,34 @@ import { VscRefresh } from "react-icons/vsc";
 import { VscCollapseAll } from "react-icons/vsc";
 
 import Index from "components/EditorTabs/Index";
-import AboutTech from "components/EditorTabs/AboutTech";
+import TechStack from "components/EditorTabs/TechStack";
 import Github from "components/EditorTabs/Github";
 import Contact from "components/EditorTabs/Contact";
 import useMediaQuery from "utils/useMediaQuery";
 
-const defaultTabs = ["Index.js", "AboutTech.css", "Github.md", "Contact.html"];
+const defaultTabs = ["index.js", "techStack.css", "github.md", "contact.html"];
 
 export default function File() {
   const isMobile = useMediaQuery("(max-width: 574px)");
   const [hideFolder, setHideFolder] = useState(true);
 
-  // Initialize openTabs from sessionStorage or fallback to ["Index.js"]
+  // Initialize openTabs from sessionStorage or fallback to ["index.js"]
   const [openTabs, setOpenTabs] = useState(() => {
     try {
       const storedTabs = sessionStorage.getItem("openTabs");
-      return storedTabs ? JSON.parse(storedTabs) : ["Index.js"];
+      return storedTabs ? JSON.parse(storedTabs) : ["index.js"];
     } catch {
-      return ["Index.js"];
+      return ["index.js"];
     }
   });
 
-  // Initialize activeTab similarly, fallback to "Index.js"
+  // Initialize activeTab similarly, fallback to "index.js"
   const [activeTab, setActiveTab] = useState(() => {
     try {
       const storedActive = sessionStorage.getItem("activeTab");
-      return storedActive || "Index.js";
+      return storedActive || "index.js";
     } catch {
-      return "Index.js";
+      return "index.js";
     }
   });
 
@@ -57,45 +57,45 @@ export default function File() {
   useEffect(() => {
     if (isMobile) {
       setOpenTabs(defaultTabs);
-      setActiveTab((cur) => (defaultTabs.includes(cur) ? cur : "Index.js"));
+      setActiveTab((cur) => (defaultTabs.includes(cur) ? cur : "index.js"));
     }
   }, [isMobile]);
 
   const editorTabView = [
     {
-      title: "Index.js",
+      title: "index.js",
       icon: <DiJsBadge className="icon-size-12" color="yellow" />,
       detailSection: <Index />,
     },
     {
-      title: "AboutTech.css",
+      title: "techStack.css",
       icon: <IoLogoCss3 className="icon-size-14" color="#663399" />,
-      detailSection: <AboutTech />,
+      detailSection: <TechStack />,
     },
     {
-      title: "Github.md",
+      title: "github.md",
       icon: <BiSolidInfoCircle className="icon-size-14" color="#0096FF" />,
       detailSection: <Github />,
     },
     {
-      title: "Contact.html",
+      title: "contact.html",
       icon: <FaHtml5 className="icon-size-14" color="#E44D26" />,
       detailSection: <Contact />,
     },
   ];
 
   const fileComponents = {
-    "Index.js": <Index />,
-    "AboutTech.css": <AboutTech />,
-    "Github.md": <Github />,
-    "Contact.html": <Contact />,
+    "index.js": <Index />,
+    "techStack.css": <TechStack />,
+    "github.md": <Github />,
+    "contact.html": <Contact />,
   };
 
   const fileIcons = {
-    "Index.js": <DiJsBadge className="icon-size-12" color="yellow" />,
-    "AboutTech.css": <IoLogoCss3 className="icon-size-14" color="#663399" />,
-    "Github.md": <BiSolidInfoCircle className="icon-size-14" color="#0096FF" />,
-    "Contact.html": <FaHtml5 className="icon-size-14" color="#E44D26" />,
+    "index.js": <DiJsBadge className="icon-size-12" color="yellow" />,
+    "techStack.css": <IoLogoCss3 className="icon-size-14" color="#663399" />,
+    "github.md": <BiSolidInfoCircle className="icon-size-14" color="#0096FF" />,
+    "contact.html": <FaHtml5 className="icon-size-14" color="#E44D26" />,
   };
 
   const handleFileClick = (fileName) => {

@@ -47,7 +47,7 @@ const myIndexInfo = `.cpp {
 
 `;
 
-export default function AboutTech() {
+export default function TechStack() {
   return (
     <div>
       <CodeEditor value={myIndexInfo} lang="css" />

@@ -27,15 +27,15 @@ export default function Footer() {
 
           <div className="div-flex-row cg-5 div-align-center">
             <IoIosGitBranch className="icon-size-12" />
-            <span className="text-xs">master*</span>
+            <span className="text-xs text-grey">master*</span>
           </div>
 
           <div className="div-flex-row cg-5 div-align-center">
             <VscSync className="icon-size-12" />
             <div className="div-flex-row div-align-center">
-              <span className="text-xs">0</span>
+              <span className="text-xs text-grey">0</span>
               <VscArrowDown className="icon-size-12" />
-              <span className="text-xs">0</span>
+              <span className="text-xs text-grey">0</span>
               <VscArrowUp className="icon-size-12" />
             </div>
           </div>
@@ -43,31 +43,31 @@ export default function Footer() {
           <div className="div-flex-row cg-5 div-align-center">
             <div className="div-flex-row cg-5 div-align-center">
               <VscError className="icon-size-12" />
-              <span className="text-xs">0</span>
+              <span className="text-xs text-grey">0</span>
             </div>
             <div className="div-flex-row cg-5 div-align-center">
               <VscWarning className="icon-size-12" />
-              <span className="text-xs">0</span>
+              <span className="text-xs text-grey">0</span>
             </div>
           </div>
         </div>
         {!isMobile && (
           <div className="div-flex-row cg-20 hp-10 cursor-pointer">
             <div className="div-flex-row cg-5 div-align-center">
-              <span className="text-xs">Ln 53, Col 39</span>
+              <span className="text-xs text-grey">Ln 53, Col 39</span>
             </div>
             <div className="div-flex-row cg-5 div-align-center">
-              <span className="text-xs">Spaces: 2</span>
+              <span className="text-xs text-grey">Spaces: 2</span>
             </div>
             <div className="div-flex-row cg-5 div-align-center">
-              <span className="text-xs">UTF-8</span>
+              <span className="text-xs text-grey">UTF-8</span>
             </div>
             <div className="div-flex-row cg-5 div-align-center">
-              <span className="text-xs">CRLF</span>
+              <span className="text-xs text-grey">CRLF</span>
             </div>
             <div className="div-flex-row cg-5 div-align-center">
               <VscJson className="icon-size-12" />
-              <span className="text-xs">JavaScript</span>
+              <span className="text-xs text-grey">JavaScript</span>
             </div>
             <div className="div-flex-row cg-5 div-align-center">
               <VscCopilot className="icon-size-12" />

@@ -47,8 +47,8 @@ function Navbar() {
       <div className="navbar-container-padding">
         <Row className="g-0 m-0 p-0">
           <Col xl={4} lg={4} md={4} sm={6} xs={6}>
-            <div className="div-flex-row  div-align-center cg-20 text-white ">
-              <div className="div-flex-row div-align-center cg-25">
+            <div className="h-100 div-flex-row div-align-center cg-20 text-white ">
+              <div>
                 <VsCodeLogo />
               </div>
               {!isMobile && (

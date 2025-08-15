@@ -37,6 +37,10 @@ export default function Search() {
       case "4":
         url = "https://www.instagram.com/ajay_nishad_2504/";
         break;
+      case "5":
+        url =
+          "https://drive.google.com/file/d/1ebqaplNiaXuyWWHMAxXu_1y2AI1ZzXjr/view";
+        break;
       default:
         return;
     }
@@ -152,7 +156,12 @@ export default function Search() {
                 </div>
               </div>
               <div className="div-flex-row div-flex-center vp-20">
-                <button className="view-resume-btn ">
+                <button
+                  className="view-resume-btn "
+                  onClick={() => {
+                    handleUserNavigate("5");
+                  }}
+                >
                   <VscLinkExternal
                     className="icon-size-18 icon-bold-border"
                     color="black"

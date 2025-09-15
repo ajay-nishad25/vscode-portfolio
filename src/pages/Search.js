@@ -47,131 +47,171 @@ export default function Search() {
   }
 
   return (
-    <div className="div-flex-column">
-      <Row className="explore-section-height  p-0 m-0 gx-0 ">
-        {!isMobile && (
-          <Col
-            xl={2}
-            lg={3}
-            md={4}
-            sm={5}
-            xs={2}
-            className="explorer-bg grey-border-right"
-          >
-            <div className="div-flex-column hp-10 ">
-              <div className="div-space-between vp-5">
-                <div className="div-flex-column">
-                  <span className="text-sm text-grey">SEARCH</span>
-                </div>
+    <>
+      <title>Ajay Nishad | VSCode Portfolio – Connect & Search</title>
+      <meta
+        name="description"
+        content="Connect with Ajay Nishad on GitHub, LinkedIn, Gmail, Instagram and use search features in this VSCode-themed React portfolio."
+      />
+      <meta
+        name="keywords"
+        content="VSCode portfolio, Ajay Nishad, React developer, contact, GitHub, LinkedIn, Instagram, developer portfolio, resume"
+      />
+      <link
+        rel="canonical"
+        href="https://ajay-nishad25-portfolio.vercel.app/search"
+      />
 
-                <div className="div-flex-row cg-5 div-align-center">
-                  <VscRefresh className="icon-size-14" color="grey" />
-                  <VscClearAll className="icon-size-14" color="grey" />
-                  <VscNewFile className="icon-size-14" color="grey" />
-                  <VscListFlat className="icon-size-14" color="grey" />
-                  <VscCollapseAll className="icon-size-14" color="grey" />
+      <meta
+        property="og:title"
+        content="Ajay Nishad | VSCode Portfolio – Connect & Search"
+      />
+      <meta
+        property="og:description"
+        content="Developer connections and search features in Ajay Nishad's VSCode-themed React portfolio."
+      />
+      <meta
+        property="og:url"
+        content="https://ajay-nishad25-portfolio.vercel.app/search"
+      />
+      <meta property="og:type" content="website" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content="Ajay Nishad | VSCode Portfolio – Connect & Search"
+      />
+      <meta
+        name="twitter:description"
+        content="Connect with Ajay Nishad via GitHub, LinkedIn, and more in this React portfolio featuring VSCode style."
+      />
+      <div className="div-flex-column">
+        <Row className="explore-section-height  p-0 m-0 gx-0 ">
+          {!isMobile && (
+            <Col
+              xl={2}
+              lg={3}
+              md={4}
+              sm={5}
+              xs={2}
+              className="explorer-bg grey-border-right"
+            >
+              <div className="div-flex-column hp-10 ">
+                <div className="div-space-between vp-5">
+                  <div className="div-flex-column">
+                    <span className="text-sm text-grey">SEARCH</span>
+                  </div>
+
+                  <div className="div-flex-row cg-5 div-align-center">
+                    <VscRefresh className="icon-size-14" color="grey" />
+                    <VscClearAll className="icon-size-14" color="grey" />
+                    <VscNewFile className="icon-size-14" color="grey" />
+                    <VscListFlat className="icon-size-14" color="grey" />
+                    <VscCollapseAll className="icon-size-14" color="grey" />
+                  </div>
                 </div>
-              </div>
-              <div className="div-flex-column">
-                <div className="div-flex-row w-100 vp-5 div-align-center cg-5">
-                  <VscChevronDown
-                    className={`icon-size-14 open-arrow-upward`}
-                  />
-                  <div className="div-flex-column w-100">
-                    <div class="search-input-container">
-                      <input
-                        type="text"
-                        class="search-input"
-                        placeholder="Search"
-                      />
-                      <div className="div-flex-row cg-5 hp-5">
-                        <VscWholeWord className="icon-size-14" />
-                        <VscCaseSensitive className="icon-size-14" />
-                        <VscRegex className="icon-size-14" />
+                <div className="div-flex-column">
+                  <div className="div-flex-row w-100 vp-5 div-align-center cg-5">
+                    <VscChevronDown
+                      className={`icon-size-14 open-arrow-upward`}
+                    />
+                    <div className="div-flex-column w-100">
+                      <div class="search-input-container">
+                        <input
+                          type="text"
+                          class="search-input"
+                          placeholder="Search"
+                        />
+                        <div className="div-flex-row cg-5 hp-5">
+                          <VscWholeWord className="icon-size-14" />
+                          <VscCaseSensitive className="icon-size-14" />
+                          <VscRegex className="icon-size-14" />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </Col>
+          )}
+          <Col xl={10} lg={9} md={8} sm={7} xs={12}>
+            <div className="div-flex-column">
+              <div className="tab-content-area tab-main-content-bg">
+                <div className="div-flex-column">
+                  <div className="div-flex-row vp-20 div-flex-center">
+                    <span className="text-big text-grey">Let's connect</span>
+                  </div>
+                  <div className="div-flex-column vp-10 text-center w-100 hp-10">
+                    <span className=" text-grey">
+                      You can reach out to me through these channels, and
+                      together we can build something amazing.
+                    </span>
+                  </div>
+                  <div className="div-flex-row vp-10 cg-20 div-flex-center">
+                    <button
+                      className="site-icon-background"
+                      onClick={() => {
+                        handleUserNavigate("1");
+                      }}
+                    >
+                      <GithubIcon />
+                    </button>
+                    <button
+                      className="site-icon-background"
+                      onClick={() => {
+                        handleUserNavigate("2");
+                      }}
+                    >
+                      <GmailIcon />
+                    </button>
+                    <button
+                      className="site-icon-background"
+                      onClick={() => {
+                        handleUserNavigate("3");
+                      }}
+                    >
+                      <LinkedinIcon />
+                    </button>
+                    <button
+                      className="site-icon-background"
+                      onClick={() => {
+                        handleUserNavigate("4");
+                      }}
+                    >
+                      <InstagramIcon />
+                    </button>
+                  </div>
+                  <div className="div-flex-column vp-10 text-center w-100">
+                    <span className="text-grey">
+                      Feel free to contact me anytime
+                    </span>
+                  </div>
+                  <div className="div-flex-column vp-10 text-center w-100">
+                    <span className="text-grey">
+                      I'm excited to collaborate and create great things with
+                      you.
+                    </span>
+                  </div>
+                </div>
+                <div className="div-flex-row div-flex-center vp-20">
+                  <button
+                    className="view-resume-btn "
+                    onClick={() => {
+                      handleUserNavigate("5");
+                    }}
+                  >
+                    <VscLinkExternal
+                      className="icon-size-18 icon-bold-border"
+                      color="black"
+                    />
+                    <span className="text-grey">View Resume</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </Col>
-        )}
-        <Col xl={10} lg={9} md={8} sm={7} xs={12}>
-          <div className="div-flex-column">
-            <div className="tab-content-area tab-main-content-bg">
-              <div className="div-flex-column">
-                <div className="div-flex-row vp-20 div-flex-center">
-                  <span className="text-big text-grey">Let's connect</span>
-                </div>
-                <div className="div-flex-column vp-10 text-center w-100 hp-10">
-                  <span className=" text-grey">
-                    You can reach out to me through these channels, and together
-                    we can build something amazing.
-                  </span>
-                </div>
-                <div className="div-flex-row vp-10 cg-20 div-flex-center">
-                  <button
-                    className="site-icon-background"
-                    onClick={() => {
-                      handleUserNavigate("1");
-                    }}
-                  >
-                    <GithubIcon />
-                  </button>
-                  <button
-                    className="site-icon-background"
-                    onClick={() => {
-                      handleUserNavigate("2");
-                    }}
-                  >
-                    <GmailIcon />
-                  </button>
-                  <button
-                    className="site-icon-background"
-                    onClick={() => {
-                      handleUserNavigate("3");
-                    }}
-                  >
-                    <LinkedinIcon />
-                  </button>
-                  <button
-                    className="site-icon-background"
-                    onClick={() => {
-                      handleUserNavigate("4");
-                    }}
-                  >
-                    <InstagramIcon />
-                  </button>
-                </div>
-                <div className="div-flex-column vp-10 text-center w-100">
-                  <span className="text-grey">
-                    Feel free to contact me anytime
-                  </span>
-                </div>
-                <div className="div-flex-column vp-10 text-center w-100">
-                  <span className="text-grey">
-                    I'm excited to collaborate and create great things with you.
-                  </span>
-                </div>
-              </div>
-              <div className="div-flex-row div-flex-center vp-20">
-                <button
-                  className="view-resume-btn "
-                  onClick={() => {
-                    handleUserNavigate("5");
-                  }}
-                >
-                  <VscLinkExternal
-                    className="icon-size-18 icon-bold-border"
-                    color="black"
-                  />
-                  <span className="text-grey">View Resume</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </Col>
-      </Row>
-    </div>
+        </Row>
+      </div>
+    </>
   );
 }

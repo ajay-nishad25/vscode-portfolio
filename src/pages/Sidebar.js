@@ -2,12 +2,12 @@ import React from "react";
 import "styles/sidebar.css";
 import { VscAccount, VscSettingsGear } from "react-icons/vsc";
 import GetSidebarData from "utils/GetSidebarData";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter, usePathname } from "next/navigation";
 
 function Sidebar() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const currentPath = location.pathname;
+  const router = useRouter();
+  const navigate = router.push;
+  const currentPath = usePathname();
   const sidebarData = GetSidebarData();
 
   function normalizePath(path) {

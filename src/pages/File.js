@@ -24,35 +24,35 @@ export default function File() {
   const isMobile = useMediaQuery("(max-width: 574px)");
   const [hideFolder, setHideFolder] = useState(true);
 
-  // Initialize openTabs from sessionStorage or fallback to ["index.js"]
-  const [openTabs, setOpenTabs] = useState(() => {
+  const [openTabs, setOpenTabs] = useState(["index.js"]);
+  const [activeTab, setActiveTab] = useState("index.js");
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
     try {
       const storedTabs = sessionStorage.getItem("openTabs");
-      return storedTabs ? JSON.parse(storedTabs) : ["index.js"];
-    } catch {
-      return ["index.js"];
-    }
-  });
+      if (storedTabs) setOpenTabs(JSON.parse(storedTabs));
 
-  // Initialize activeTab similarly, fallback to "index.js"
-  const [activeTab, setActiveTab] = useState(() => {
-    try {
       const storedActive = sessionStorage.getItem("activeTab");
-      return storedActive || "index.js";
-    } catch {
-      return "index.js";
+      if (storedActive) setActiveTab(storedActive);
+    } catch (e) {}
+  }, []);
+
+  // Sync sessionStorage whenever openTabs changes, but only after mount
+  useEffect(() => {
+    if (isMounted) {
+      sessionStorage.setItem("openTabs", JSON.stringify(openTabs));
     }
-  });
+  }, [openTabs, isMounted]);
 
-  // Sync sessionStorage whenever openTabs changes
+  // Sync sessionStorage whenever activeTab changes, but only after mount
   useEffect(() => {
-    sessionStorage.setItem("openTabs", JSON.stringify(openTabs));
-  }, [openTabs]);
-
-  // Sync sessionStorage whenever activeTab changes
-  useEffect(() => {
-    sessionStorage.setItem("activeTab", activeTab);
-  }, [activeTab]);
+    if (isMounted) {
+      sessionStorage.setItem("activeTab", activeTab);
+    }
+  }, [activeTab, isMounted]);
 
   useEffect(() => {
     if (isMobile) {
@@ -106,6 +106,8 @@ export default function File() {
   };
 
   const handleCloseTab = (fileName) => {
+    if (openTabs.length <= 1) return; // Prevent closing the last open tab
+
     const updatedTabs = openTabs.filter((f) => f !== fileName);
     setOpenTabs(updatedTabs);
     if (fileName === activeTab) {
@@ -174,7 +176,7 @@ export default function File() {
                       {editorTabView.map((file) => (
                         <div
                           key={file.title}
-                          className="div-flex-row div-align-center cg-5 cursor-pointer hp-60 file-item"
+                          className="div-flex-row div-align-center cg-5 cursor-pointer hp-60 file-item ps-5"
                           onClick={() => handleFileClick(file.title)}
                         >
                           <span>{file.icon}</span>

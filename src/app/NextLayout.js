@@ -1,10 +1,10 @@
+"use client";
 import React from "react";
 import Navbar from "pages/Navbar";
 import Sidebar from "pages/Sidebar";
 import Footer from "pages/Footer";
-import { Outlet } from "react-router-dom";
 
-function Layout() {
+export default function NextLayout({ children }) {
   return (
     <div className="page-layout">
       <Navbar />
@@ -12,7 +12,7 @@ function Layout() {
         <div className="div-flex-row sub-page-layout">
           <Sidebar />
           <div className="main-content text-white">
-            <Outlet />
+            {children}
           </div>
         </div>
         <Footer />
@@ -20,5 +20,3 @@ function Layout() {
     </div>
   );
 }
-
-export default Layout;

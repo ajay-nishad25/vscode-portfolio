@@ -21,30 +21,39 @@ export default function Extension() {
     {
       id: "github",
       name: "Github Theme",
-      icon: <img src={GithubTheme} alt="github" width="60px" height="60px" />,
+      icon: <img src={GithubTheme.src} alt="github" width="60px" height="60px" />,
     },
     {
       id: "vscode",
       name: "Vscode Theme",
-      icon: <img src={VscodeTheme} alt="vscode" width="60px" height="60px" />,
+      icon: <img src={VscodeTheme.src} alt="vscode" width="60px" height="60px" />,
     },
     {
       id: "atom",
       name: "Atom Theme",
-      icon: <img src={AtomTheme} alt="atom" width="60px" height="60px" />,
+      icon: <img src={AtomTheme.src} alt="atom" width="60px" height="60px" />,
     },
     {
       id: "dracula",
       name: "Dracula Theme",
-      icon: <img src={DraculaTheme} alt="dracula" width="60px" height="60px" />,
+      icon: <img src={DraculaTheme.src} alt="dracula" width="60px" height="60px" />,
     },
   ];
 
-  const [activeTheme, setActiveTheme] = useState(getSavedTheme());
+  const [activeTheme, setActiveTheme] = useState("github");
+
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setTheme(activeTheme);
-  }, [activeTheme]);
+    setIsMounted(true);
+    setActiveTheme(getSavedTheme());
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      setTheme(activeTheme);
+    }
+  }, [activeTheme, isMounted]);
 
   return (
     <div className="h-100 div-flex-column">

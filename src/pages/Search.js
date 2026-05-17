@@ -13,10 +13,10 @@ import { VscRegex } from "react-icons/vsc";
 import { VscChevronDown } from "react-icons/vsc";
 import useMediaQuery from "utils/useMediaQuery";
 import { VscLinkExternal } from "react-icons/vsc";
-import { ReactComponent as GithubIcon } from "images/icons/github-svg.svg";
-import { ReactComponent as GmailIcon } from "images/icons/gmail-svg.svg";
-import { ReactComponent as LinkedinIcon } from "images/icons/linkedin-svg.svg";
-import { ReactComponent as InstagramIcon } from "images/icons/instagram-svg.svg";
+import GithubIcon from "images/icons/github-svg.svg";
+import GmailIcon from "images/icons/gmail-svg.svg";
+import LinkedinIcon from "images/icons/linkedin-svg.svg";
+import InstagramIcon from "images/icons/instagram-svg.svg";
 
 export default function Search() {
   const isMobile = useMediaQuery("(max-width: 574px)");

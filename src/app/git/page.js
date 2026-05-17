@@ -1,4 +1,4 @@
-import Git from "pages/Git";
+import Git from "views/Git";
 
 export const metadata = {
   title: "Source Control - Ajay Nishad | VS Code Portfolio",

@@ -23,28 +23,22 @@ export default function Search() {
   const isMobile = useMediaQuery("(max-width: 574px)");
 
   function handleUserNavigate(page) {
-    let url = "";
-    switch (page) {
-      case "1":
-        url = "https://github.com/ajay-nishad25";
-        break;
-      case "2":
-        window.location.href = "mailto:ajaynishad4123@gmail.com";
-        break;
-      case "3":
-        url = "https://www.linkedin.com/in/ajay-nishad25/";
-        break;
-      case "4":
-        url = "https://www.instagram.com/ajay_nishad_2504/";
-        break;
-      case "5":
-        url =
-          "https://drive.google.com/file/d/1dRAz5iArdu0ubdq3vZDIhwuJsPNXDYkd/view?usp=sharing";
-        break;
-      default:
-        return;
+    const routes = {
+      "1": "https://github.com/ajay-nishad25",
+      "2": "mailto:ajaynishad4123@gmail.com",
+      "3": "https://www.linkedin.com/in/ajay-nishad25/",
+      "4": "https://www.instagram.com/ajay_nishad_2504/",
+      "5":
+        "https://drive.google.com/file/d/1dRAz5iArdu0ubdq3vZDIhwuJsPNXDYkd/view?usp=sharing",
+    };
+
+    const url = routes[page];
+
+    if (!url) return;
+
+    if (typeof window !== "undefined") {
+      window.location.assign(url);
     }
-    if (page !== "2") window.open(url, "_blank", "noopener,noreferrer");
   }
 
   return (

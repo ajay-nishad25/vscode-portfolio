@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import "styles/file.css";
 import "styles/search.css";
@@ -12,16 +13,16 @@ import {
 } from "../redux/Actions/githubActions";
 import { GoLocation } from "react-icons/go";
 import { GoPeople } from "react-icons/go";
-import { ReactComponent as AndroidIcon } from "images/icons/android.svg";
-import { ReactComponent as BootstrapIcon } from "images/icons/bootstrap.svg";
-import { ReactComponent as CLanguageIcon } from "images/icons/c.svg";
-import { ReactComponent as CSSIcon } from "images/icons/css.svg";
-import { ReactComponent as FirebaseIcon } from "images/icons/firebase.svg";
-import { ReactComponent as GitIcon } from "images/icons/git.svg";
-import { ReactComponent as JavaIcon } from "images/icons/java.svg";
-import { ReactComponent as JavaScriptIcon } from "images/icons/js.svg";
-import { ReactComponent as LinuxIcon } from "images/icons/linux.svg";
-import { ReactComponent as ReactLogoIcon } from "images/icons/react.svg";
+import AndroidIcon from "images/icons/android.svg";
+import BootstrapIcon from "images/icons/bootstrap.svg";
+import CLanguageIcon from "images/icons/c.svg";
+import CSSIcon from "images/icons/css.svg";
+import FirebaseIcon from "images/icons/firebase.svg";
+import GitIcon from "images/icons/git.svg";
+import JavaIcon from "images/icons/java.svg";
+import JavaScriptIcon from "images/icons/js.svg";
+import LinuxIcon from "images/icons/linux.svg";
+import ReactLogoIcon from "images/icons/react.svg";
 import { GoStar } from "react-icons/go";
 import { getLanguageColor } from "utils/getLanguageColor";
 
@@ -83,34 +84,20 @@ export default function Git() {
                           placeholder='Message (Ctrl+Enter to commit on "git-page")'
                         />
                       </div>
-                      <div className="commit-button-container">
-                        <Row>
-                          <Col
-                            xxl={10}
-                            lg={10}
-                            md={10}
-                            sm={10}
-                            xs={10}
-                            className=" div-flex-column div-flex-center white-border-right"
-                          >
-                            <div className="div-flex-row div-flex-center div-align-center cg-5">
-                              <VscCheck className={`icon-size-14`} />
-                              <span className="text-sm text-white">Commit</span>
-                            </div>
-                          </Col>
-                          <Col
-                            xxl={2}
-                            lg={2}
-                            md={2}
-                            sm={2}
-                            xs={2}
-                            className=" div-flex-column div-flex-center"
-                          >
-                            <VscChevronDown
-                              className={`icon-size-14 open-arrow-downward `}
-                            />
-                          </Col>
-                        </Row>
+                      <div className="commit-button-container div-flex-row div-align-center w-100">
+                        <div
+                          className="div-flex-row div-flex-center div-align-center cg-5 white-border-right cursor-pointer"
+                          style={{ flex: 1, padding: "2px 0" }}
+                        >
+                          <VscCheck className="icon-size-14" color="white" />
+                          <span className="text-sm text-white">Commit</span>
+                        </div>
+                        <div
+                          className="div-flex-center div-align-center cursor-pointer"
+                          style={{ width: "32px", padding: "2px 0" }}
+                        >
+                          <VscChevronDown className="icon-size-14 open-arrow-downward" color="white" />
+                        </div>
                       </div>
                     </div>
                   </div>

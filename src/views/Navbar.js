@@ -8,10 +8,10 @@ import { PiCopyLight } from "react-icons/pi";
 import { VscSearch } from "react-icons/vsc";
 import { MdOutlineClose } from "react-icons/md";
 import useMediaQuery from "utils/useMediaQuery";
-import { ReactComponent as VsCodeLogo } from "images/icons/vscode.svg";
-import { ReactComponent as MacRed } from "images/icons/mac-red.svg";
-import { ReactComponent as MacYellow } from "images/icons/mac-yellow.svg";
-import { ReactComponent as MacGreen } from "images/icons/mac-green.svg";
+import VsCodeLogo from "images/icons/vscode.svg";
+import MacRed from "images/icons/mac-red.svg";
+import MacYellow from "images/icons/mac-yellow.svg";
+import MacGreen from "images/icons/mac-green.svg";
 
 function Navbar() {
   const isMobile = useMediaQuery("(max-width: 768px)");

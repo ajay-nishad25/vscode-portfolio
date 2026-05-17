@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "styles/file.css";
 import "styles/search.css";
@@ -13,10 +14,10 @@ import { VscRegex } from "react-icons/vsc";
 import { VscChevronDown } from "react-icons/vsc";
 import useMediaQuery from "utils/useMediaQuery";
 import { VscLinkExternal } from "react-icons/vsc";
-import { ReactComponent as GithubIcon } from "images/icons/github-svg.svg";
-import { ReactComponent as GmailIcon } from "images/icons/gmail-svg.svg";
-import { ReactComponent as LinkedinIcon } from "images/icons/linkedin-svg.svg";
-import { ReactComponent as InstagramIcon } from "images/icons/instagram-svg.svg";
+import GithubIcon from "images/icons/github-svg.svg";
+import GmailIcon from "images/icons/gmail-svg.svg";
+import LinkedinIcon from "images/icons/linkedin-svg.svg";
+import InstagramIcon from "images/icons/instagram-svg.svg";
 
 export default function Search() {
   const isMobile = useMediaQuery("(max-width: 574px)");
@@ -38,7 +39,7 @@ export default function Search() {
         break;
       case "5":
         url =
-          "https://drive.google.com/file/d/1ebqaplNiaXuyWWHMAxXu_1y2AI1ZzXjr/view";
+          "https://drive.google.com/file/d/1dRAz5iArdu0ubdq3vZDIhwuJsPNXDYkd/view?usp=sharing";
         break;
       default:
         return;

@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import "styles/file.css";
 import "styles/search.css";

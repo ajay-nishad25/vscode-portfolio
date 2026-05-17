@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "styles/file.css";
 import "styles/search.css";
